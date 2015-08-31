@@ -9,6 +9,5 @@ public class Wolfgang
 			System.out.print("\nThe Turkish March " );
 			System.out.print("and Symphony No. 40");
 			System.out.println("in G minor.");
-
 	}
 }
