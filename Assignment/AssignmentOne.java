@@ -1,3 +1,6 @@
+// CS 504 AssignmentOne
+// Name: Wei
+
 import java.util.*;
 
 public class AssignmentOne {
