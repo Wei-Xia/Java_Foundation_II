@@ -1,0 +1,81 @@
+C:\Users\Jing\Github\Java_Foundation_II\Assignment>javac AssignmentOne.java
+
+C:\Users\Jing\Github\Java_Foundation_II\Assignment>java AssignmentOne
+Please enter i,j,k,n
+2
+6
+7
+7
+Yes
+
+C:\Users\Jing\Github\Java_Foundation_II\Assignment>java AssignmentOne
+Please enter i,j,k,n
+2
+6
+1
+7
+Yes
+
+C:\Users\Jing\Github\Java_Foundation_II\Assignment>java AssignmentOne
+Please enter i,j,k,n
+2
+6
+3
+7
+No
+
+C:\Users\Jing\Github\Java_Foundation_II\Assignment>java AssignmentOne
+Please enter i,j,k,n
+3
+5
+3
+7
+Yes
+
+C:\Users\Jing\Github\Java_Foundation_II\Assignment>java AssignmentOne
+Please enter i,j,k,n
+0
+7
+0
+7
+Yes
+
+C:\Users\Jing\Github\Java_Foundation_II\Assignment>java AssignmentOne
+Please enter i,j,k,n
+0
+7
+6
+7
+No
+
+C:\Users\Jing\Github\Java_Foundation_II\Assignment>java AssignmentOne
+Please enter i,j,k,n
+3
+5
+4
+7
+No
+
+C:\Users\Jing\Github\Java_Foundation_II\Assignment>java AssignmentOne
+Please enter i,j,k,n
+4
+2
+5
+7
+No
+
+C:\Users\Jing\Github\Java_Foundation_II\Assignment>java AssignmentOne
+Please enter i,j,k,n
+4
+2
+3
+7
+Yes
+
+C:\Users\Jing\Github\Java_Foundation_II\Assignment>java AssignmentOne
+Please enter i,j,k,n
+7
+0
+0
+7
+No
