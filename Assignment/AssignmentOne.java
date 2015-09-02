@@ -12,7 +12,5 @@ public class AssignmentOne {
 		k = scan.nextInt();
 		n = scan.nextInt();
 
-		System.out.println(i,j,k,n);
-
 	}
 }
