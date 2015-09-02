@@ -1,81 +1,80 @@
-C:\Users\Jing\Github\Java_Foundation_II\Assignment>javac AssignmentOne.java
 
-C:\Users\Jing\Github\Java_Foundation_II\Assignment>java AssignmentOne
+C:\Users\Jing\Github\Java_Foundation_II\Assignment\Assignment #1>java AssignmentOne
 Please enter i,j,k,n
 2
 6
 7
 7
-Yes
+k lies on the arc from j to i when moving clockwise on a circle of size n
 
-C:\Users\Jing\Github\Java_Foundation_II\Assignment>java AssignmentOne
+C:\Users\Jing\Github\Java_Foundation_II\Assignment\Assignment #1>java AssignmentOne
 Please enter i,j,k,n
 2
 6
 1
 7
-Yes
+k lies on the arc from j to i when moving clockwise on a circle of size n
 
-C:\Users\Jing\Github\Java_Foundation_II\Assignment>java AssignmentOne
+C:\Users\Jing\Github\Java_Foundation_II\Assignment\Assignment #1>java AssignmentOne
 Please enter i,j,k,n
 2
 6
 3
 7
-No
+k does NOT lie on the arc from j to i when moving clockwise on a circle of size n
 
-C:\Users\Jing\Github\Java_Foundation_II\Assignment>java AssignmentOne
+C:\Users\Jing\Github\Java_Foundation_II\Assignment\Assignment #1>java AssignmentOne
 Please enter i,j,k,n
 3
 5
 3
 7
-Yes
+k lies on the arc from j to i when moving clockwise on a circle of size n
 
-C:\Users\Jing\Github\Java_Foundation_II\Assignment>java AssignmentOne
+C:\Users\Jing\Github\Java_Foundation_II\Assignment\Assignment #1>java AssignmentOne
 Please enter i,j,k,n
 0
 7
 0
 7
-Yes
+k lies on the arc from j to i when moving clockwise on a circle of size n
 
-C:\Users\Jing\Github\Java_Foundation_II\Assignment>java AssignmentOne
+C:\Users\Jing\Github\Java_Foundation_II\Assignment\Assignment #1>java AssignmentOne
 Please enter i,j,k,n
 0
 7
 6
 7
-No
+k does NOT lie on the arc from j to i when moving clockwise on a circle of size n
 
-C:\Users\Jing\Github\Java_Foundation_II\Assignment>java AssignmentOne
+C:\Users\Jing\Github\Java_Foundation_II\Assignment\Assignment #1>java AssignmentOne
 Please enter i,j,k,n
 3
 5
 4
 7
-No
+k does NOT lie on the arc from j to i when moving clockwise on a circle of size n
 
-C:\Users\Jing\Github\Java_Foundation_II\Assignment>java AssignmentOne
+C:\Users\Jing\Github\Java_Foundation_II\Assignment\Assignment #1>java AssignmentOne
 Please enter i,j,k,n
 4
 2
 5
 7
-No
+k does NOT lie on the arc from j to i when moving clockwise on a circle of size n
 
-C:\Users\Jing\Github\Java_Foundation_II\Assignment>java AssignmentOne
+C:\Users\Jing\Github\Java_Foundation_II\Assignment\Assignment #1>java AssignmentOne
 Please enter i,j,k,n
 4
 2
 3
 7
-Yes
+k lies on the arc from j to i when moving clockwise on a circle of size n
 
-C:\Users\Jing\Github\Java_Foundation_II\Assignment>java AssignmentOne
+C:\Users\Jing\Github\Java_Foundation_II\Assignment\Assignment #1>java AssignmentOne
 Please enter i,j,k,n
 7
 0
 0
 7
-No
+k does NOT lie on the arc from j to i when moving clockwise on a circle of size n

@@ -16,14 +16,14 @@ public class AssignmentOne {
 		n = scan.nextInt();
 
 		if (j<k && k<=n && i<j)
-			System.out.println("Yes");
+			System.out.println("k lies on the arc from j to i when moving clockwise on a circle of size n");
 		else
 			if(k<=i && i<j)
-				System.out.println("Yes");
+				System.out.println("k lies on the arc from j to i when moving clockwise on a circle of size n");
 			else
 				if(j<k && k<=i)
-					System.out.println("Yes");
+					System.out.println("k lies on the arc from j to i when moving clockwise on a circle of size n");
 				else
-					System.out.println("No");
+					System.out.println("k does NOT lie on the arc from j to i when moving clockwise on a circle of size n");
 	}
 }
