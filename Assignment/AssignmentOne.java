@@ -12,12 +12,12 @@ public class AssignmentOne {
 		k = scan.nextInt();
 		n = scan.nextInt();
 
-		if (j<k && k<=n)
+		if (j<k && k<=n && k<=i)
 			System.out.println("Yes");
+		else
+			if(0<=k && k<=i && j<k)
+				System.out.println("Yes");
 			else
-				if(0<=k && k<=i)
-					System.out.println("Yes");
-				else
-					System.out.println("No");
+				System.out.println("No");
 	}
 }
