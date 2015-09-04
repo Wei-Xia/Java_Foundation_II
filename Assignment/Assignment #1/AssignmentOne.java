@@ -25,5 +25,6 @@ public class AssignmentOne {
 					System.out.println("k lies on the arc from j to i when moving clockwise on a circle of size n");
 				else
 					System.out.println("k does NOT lie on the arc from j to i when moving clockwise on a circle of size n");
+					
 	}
 }
