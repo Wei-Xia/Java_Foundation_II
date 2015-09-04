@@ -8,6 +8,6 @@ public class StringLength
     int stringSize;
 
     stringSize = name.length();
-    System.out.println(name + " has " + stringSize + "characters.");
+    System.out.println(name + " has " + stringSize + " characters.");
   }
 }
