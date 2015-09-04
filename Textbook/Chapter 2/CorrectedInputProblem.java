@@ -43,6 +43,6 @@ Then, in line 31, the nextLine method is called again. This time it correctly re
 
 Notice that in line 27, where we consume the remaining newline character,
 we do not assign the method’s return value to any variable.
-This is because we are simply calling the method to remove the newline character, 
+This is because we are simply calling the method to remove the newline character,
 and we do not need to keep the method’s return value.
 */
