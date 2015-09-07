@@ -16,15 +16,15 @@ public class AverageScore
 
       // Get the first test score.
       input = JOptionPane.showInputDialog("Enther score #1:");
-      score1 = double.parseDouble(input);
+      score1 = Double.parseDouble(input);
 
       // Get the second test score.
       input = JOptionPane.showInputDialog("Enther score #2:");
-      score2 = double.parseDouble(input);
+      score2 = Double.parseDouble(input);
 
       // Get the third test score.
       input = JOptionPane.showInputDialog("Enther score #3:");
-      score3 = double.parseDouble(input);
+      score3 = Double.parseDouble(input);
 
       // Calculate the average score.
       average = (score1+score2+score3)/3.0;
@@ -34,7 +34,7 @@ public class AverageScore
 
       // If the score was greater than 95, let the user know that's a great score
       if (average>95)
-        JOptionPane.showMessageDialog(null, "That's a great score!")
+        JOptionPane.showMessageDialog(null, "That's a great score!");
 
       System.exit(0);
   }
