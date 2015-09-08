@@ -1,5 +1,5 @@
 /**
-  This program correctly compare two String objects using the equals method.
+  This program correctly compares two String objects using the equals method.
 */
 
 public class StringCompare
