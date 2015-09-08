@@ -16,7 +16,7 @@ public class PetFood
 
     // Prompt the user for a grade of pet food
     System.out.println("Our pet food is available in three grades:");
-    System.out.print("A, B and C. Which do you want pricing for?")
+    System.out.print("A, B and C. Which do you want pricing for?");
 
     input = keyboard.nextLine();
     foodGrade = input.charAt(0);
@@ -40,7 +40,7 @@ public class PetFood
         break;
 
       default:
-        System.out.println("Invalid choice!")
+        System.out.println("Invalid choice!");
 
     }
   }
