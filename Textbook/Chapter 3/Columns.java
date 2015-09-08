@@ -16,11 +16,11 @@ public class Columns
     double num6 = 1799.999;
 
     // Display each variables in a field of 8 spaces with 2 decimal places.
-    System.out.println("%8.2f\n", num1);
-    System.out.println("%8.2f\n", num2);
-    System.out.println("%8.2f\n", num3);
-    System.out.println("%8.2f\n", num4);
-    System.out.println("%8.2f\n", num5);
-    System.out.println("%8.2f\n", num6);    
+    System.out.printf("%8.2f\n", num1);
+    System.out.printf("%8.2f\n", num2);
+    System.out.printf("%8.2f\n", num3);
+    System.out.printf("%8.2f\n", num4);
+    System.out.printf("%8.2f\n", num5);
+    System.out.printf("%8.2f\n", num6);
   }
 }
