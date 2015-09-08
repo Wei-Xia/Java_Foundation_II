@@ -17,7 +17,7 @@ public class SpeedConverter
 
     // Display the table headings
     System.out.println("KPH\t\tMPH");
-    System.out.println("-----------------");
+    System.out.println("--------------------");
 
     // Display the speeds
     for (kph = STARTING_KPH; kph <= MAX_KPH;  kph += INCREMENT) {
