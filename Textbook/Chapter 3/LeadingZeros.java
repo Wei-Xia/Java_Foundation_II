@@ -16,6 +16,5 @@ public class LeadingZeros
     System.out.printf("%09.2f\n", num1);
     System.out.printf("%09.2f\n", num2);
     System.out.printf("%09.2f\n", num3);
-    
   }
 }
