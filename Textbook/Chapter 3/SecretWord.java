@@ -19,7 +19,7 @@ public class SecretWord
 
     // Determine whether the user entered the scret word
     if (input.equalsIgnoreCase("PROSPERO")) {
-      System.out.println("Congratulations! You know the scret word!")
+      System.out.println("Congratulations! You know the scret word!");
     }
     else {
       System.out.println("Sorry, that is NOT the scret word!");
