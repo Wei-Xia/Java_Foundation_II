@@ -14,6 +14,9 @@ public class BooleanExpression
     System.out.println("Your grade is: " + (score < 60 ? "Fail." : "Pass."));
 
     // Converted to an if-else statement
-
+    if (score < 60)
+      System.out.println("Your grade is: Fail.");
+    else
+      System.out.println("Your grade is: Pass.");
   }
 }
