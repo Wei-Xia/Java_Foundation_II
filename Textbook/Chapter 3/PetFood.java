@@ -29,21 +29,18 @@ public class PetFood
         System.out.println("30 cents per lb.");
         break;
 
-      case 'a':
-      case 'A':
-        System.out.println("30 cents per lb.");
+      case 'b':
+      case 'B':
+        System.out.println("20 cents per lb.");
         break;
 
-      case 'a':
-      case 'A':
-        System.out.println("30 cents per lb.");
+      case 'c':
+      case 'C':
+        System.out.println("15 cents per lb.");
         break;
 
-      case 'a':
-      case 'A':
-        System.out.println("30 cents per lb.");
-        break;
-
+      default:
+        System.out.println("Invalid choice!")
 
     }
   }
