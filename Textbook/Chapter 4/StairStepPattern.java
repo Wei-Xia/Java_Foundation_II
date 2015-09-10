@@ -12,7 +12,7 @@ public class StairStepPattern
       for (int c = 0; c<r; c++ ) {
         System.out.print(" ");
       }
-      System.out.println("#");
+      System.out.println("*");
     }
   }
 }
