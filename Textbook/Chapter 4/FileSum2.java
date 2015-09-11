@@ -3,7 +3,7 @@ import java.io.*;
 
 /**
 This version of the program confirms that the
-Numbers.txt file exists before opening it.
+Numbers.doc file exists before opening it.
 */
 
 public class FileSum2
@@ -13,9 +13,9 @@ public class FileSum2
     double sum = 0.0; // Accumulator, initialized to 0
 
     // Make sure the file exists
-    File file = new File("Numbers.txt");
+    File file = new File("Numbers.doc");
     if (!file.exists()) {
-      System.out.println("The file Numbers.txt is not found.")
+      System.out.println("The file Numbers.doc is not found.");
       System.exit(0);
     }
 
@@ -36,6 +36,6 @@ public class FileSum2
     inputFile.close();
 
     // Display the sum of the numbers.
-    System.out.printf("The sum of the numbers in Numbers.txt is %.2f.\n", sum);
+    System.out.printf("The sum of the numbers in Numbers.doc is %.2f.\n", sum);
   }
 }
