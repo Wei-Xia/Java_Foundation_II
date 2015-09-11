@@ -1,5 +1,5 @@
 import java.util.*;
-import java.io.*;
+import java.io.*;     // Needed for the File and IOException
 
 /**
   This program reads the first line from a file.
