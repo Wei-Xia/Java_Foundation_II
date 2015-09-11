@@ -29,7 +29,7 @@ public class FileSum
     inputFile.close();
 
     // Display the sum of the numbers.
-    System.out.println("The sum of the numbers in Numbers.txt is " + sum);
+    System.out.printf("The sum of the numbers in Numbers.txt is %.2f.\n", sum);
 
   }
 }
