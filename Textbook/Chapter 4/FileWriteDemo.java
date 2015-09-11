@@ -42,6 +42,6 @@ public class FileWriteDemo
 
     // Close the file
     outputFile.close();
-    System.out.println("Data written to the file.")
+    System.out.println("Data written to the file.");
   }
 }
