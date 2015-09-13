@@ -18,7 +18,7 @@ public class CreditCard
 
     // Get the user's credit rating (1 through 10)
     input = JOptionPane.showInputDialog("On a scale of 1 through 10, what is your credit rating?\n"
-              + "(10 = excellent, 1 = very bad)";
+              + "(10 = excellent, 1 = very bad)");
     creditRating = Integer.parseInt(input);
 
     // Determine whether the user qualifies.
