@@ -33,5 +33,18 @@ public class CreditCard
   /**
   The qualify method informs the user that he qualifies for the credit card.
   */
-  
+
+  public static void qualify()
+  {
+    JOptionPane.showMessageDialog(null, "Congratulations! You qualify for the credit card!");
+  }
+
+  /**
+  The noQualify method informs the user that he doesn't qualify for the credit card
+  */
+
+  public static void noQualify()
+  {
+    JOptionPane.showMessageDialog(null, "I'm sorry. You don't qualify for the credit card!");
+  }
 }
