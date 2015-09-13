@@ -20,5 +20,18 @@ public class CreditCard
     input = JOptionPane.showInputDialog("On a scale of 1 through 10, what is your credit rating?\n"
               + "(10 = excellent, 1 = very bad)";
     creditRating = Integer.parseInt(input);
+
+    // Determine whether the user qualifies.
+    if (salary >= 20000 && creditRating >= 7)
+      qualify();
+    else
+      noQualify();
+
+    System.exit(0);
   }
+
+  /**
+  The qualify method informs the user that he qualifies for the credit card.
+  */
+  
 }
