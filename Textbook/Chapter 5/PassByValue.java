@@ -14,6 +14,22 @@ public class PassByValue
     // Call changeMe, passing the value in number as an argument
     changeMe(number);
 
-    // Display
+    // Display the value in number again
+    System.out.println("number is " + number);
+  }
+
+/**
+The changeMe method accepts an argument and then changes the value of the parameter
+*/
+
+  public static void changeMe(int myValue)
+  {
+    System.out.println("I am changing the value.");
+
+    // Change the myValue parameter variable to 0
+    myValue = 0;
+
+    // Display the value in myValue.
+    System.out.println("Now the value is " +myValue);
   }
 }
