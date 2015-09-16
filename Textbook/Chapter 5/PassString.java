@@ -19,7 +19,6 @@ public class PassString
     // Display the String referenced by the name variable
     System.out.println("Back in main, the name is " + name);
   }
-}
 
 /**
 The changeName method accepts a String as its argument and assigns the str parameter to a new String
@@ -33,4 +32,5 @@ public static void changeName (String str)
 
   // Display the String referenced by str
   System.out.println("In changeName, the name is now " + str);
+}
 }
