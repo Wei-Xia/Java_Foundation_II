@@ -13,7 +13,7 @@ public class ValueReturn
     total = sum(value1, value2);
 
     // Display the contents of all these variables
-    System.out.println("The sum of " + value1 " and " + value2 + " is " + total);
+    System.out.println("The sum of " + value1 + " and " + value2 + " is " + total);
   }
 
   /**
