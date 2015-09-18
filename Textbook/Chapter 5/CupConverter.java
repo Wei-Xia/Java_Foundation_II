@@ -28,6 +28,19 @@ public class CupConverter
 */
 
     public static double getCups()
-    
+    {
+      String input;
+      double numCups;
+
+      // Get the number of cups from the user
+      input = JOptionPane.showInputDialog("This program converts measurements \n in cups to fluid ounces. For your\n reference the formula is:\n"+
+                                            "   1 cup = 8 fluid ounces\n\n" + "Enter the number of cups.")
+
+      // Convert the input to double
+      numCups = Double.parseDouble(input);
+
+      // Return the number of cups
+      return numCups;
+    }
 
 }
