@@ -53,5 +53,15 @@ public class CupConverter
       return numCups*8.0;
     }
 
-    
+/**
+    The displayResults method display a message showing the results of the conversion.
+    @param cups A number of cups
+    @param ounces A number of ounces.
+*/
+    public static void displayResults(double cups, double ounces)
+    {
+      // Display the number of ounces
+      JOptionPane.showMessageDialog(null, cups + " cups equals " + ounces + " fluid ounces.");
+    }
+
 }
