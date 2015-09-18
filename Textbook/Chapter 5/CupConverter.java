@@ -43,4 +43,15 @@ public class CupConverter
       return numCups;
     }
 
+/**
+    The cupsToOunces method converts a number of cups to fluid ounces, using the formula 1 cup = 8 fluid ounces.
+    @param numCups The number of cups to convert.
+    @Return The number of ounces.
+*/
+    public static double cupsToOunces(double numCups)
+    {
+      return numCups*8.0;
+    }
+
+    
 }
