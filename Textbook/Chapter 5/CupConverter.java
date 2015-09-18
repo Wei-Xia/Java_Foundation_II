@@ -20,6 +20,14 @@ public class CupConverter
     // Display the result;
     displayResults(cups, ounces);
     System.exit(0);
-    
   }
+
+/**
+    The getCups method prompts the user to enter a number of cups.
+    @return The number of cups entered by the user.
+*/
+
+    public static double getCups()
+    
+
 }
