@@ -29,6 +29,23 @@ public class SalesReport
     displayResults(totalSales, averageSales);
 
     System.exit(0);
-
   }
+
+  /**
+  The getFileName method prompts the user to enter the name of the file to open.
+  @return A reference to a String object containing the name of the file.
+  */
+
+  public static String getFileName()
+  {
+    String file;      // To hold the file name
+
+    // Prompt the user to enter a file name
+    file = JOptionPane.showInputDialog("Enter the name of the file\n" + "containing 30 days of sales amounts.")
+
+    // Return the name
+    return file;
+  }
+
+  
 }
