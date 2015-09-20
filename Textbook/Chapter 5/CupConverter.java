@@ -34,7 +34,7 @@ public class CupConverter
 
       // Get the number of cups from the user
       input = JOptionPane.showInputDialog("This program converts measurements \n in cups to fluid ounces. For your\n reference the formula is:\n"+
-                                            "1 cup = 8 fluid ounces\n\n" + "Enter the number of cups.");
+                                            "1 cup = 8.0 fluid ounces\n\n" + "Enter the number of cups.");
 
       // Convert the input to double
       numCups = Double.parseDouble(input);
