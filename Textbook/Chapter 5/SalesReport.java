@@ -41,7 +41,7 @@ public class SalesReport
     String file;      // To hold the file name
 
     // Prompt the user to enter a file name
-    file = JOptionPane.showInputDialog("Enter the name of the file\n" + "containing 30 days of sales amounts.")
+    file = JOptionPane.showInputDialog("Enter the name of the file\n" + "containing 30 days of sales amounts.");
 
     // Return the name
     return file;
