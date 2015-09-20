@@ -54,5 +54,15 @@ public class SalesReport
   @return The total of the sales amounts.
   */
 
-  
+  public static double getTotalSales(String filename) throws IOException
+  {
+    double total = 0.0;    // Accumulator
+    double sales;          // A daily sales amount
+
+    // Open the file
+    File file = new File(filename);
+    Scanner inputFile = new Scanner(file);
+
+    // This loop processes the lines read from the file, until the end of the file is encountered.
+  }
 }
