@@ -47,5 +47,12 @@ public class SalesReport
     return file;
   }
 
+  /**
+  The getTotalSales method opens a file and reads the daily sales amounts, accumulating the total.
+  The total is returned.
+  @param filename The name of the file to open.
+  @return The total of the sales amounts.
+  */
+
   
 }
