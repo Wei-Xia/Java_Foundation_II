@@ -64,5 +64,19 @@ public class SalesReport
     Scanner inputFile = new Scanner(file);
 
     // This loop processes the lines read from the file, until the end of the file is encountered.
+    while (inputFile.hasNext())
+    {
+      // Read a double from the file
+      sales = inputFile.nextDouble();
+
+      // Add sales to the value already in total
+      total = total + sales;
+    }
+
+    // Close the file
+    inputFile.close();
+
+    // Return the total sales.
+    return total;
   }
 }
