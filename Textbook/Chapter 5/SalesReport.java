@@ -88,6 +88,8 @@ public class SalesReport
 
   public static void displayResults (double total, double avg)
   {
-    
+    // Display the formatted total and average sales.
+    JOptionPane.showMessageDialog(null, String.format("The total sales for the period is $%,.2f\n" +
+                            "The average daily sales were $%,.2f", total, avg));
   }
 }
