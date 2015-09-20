@@ -79,4 +79,15 @@ public class SalesReport
     // Return the total sales.
     return total;
   }
+
+  /**
+  The displayResults method displays the total and average daily sales.
+  @param total The total sales.
+  @param avg The average daily sales.
+  */
+
+  public static void displayResults (double total, double avg)
+  {
+    
+  }
 }
