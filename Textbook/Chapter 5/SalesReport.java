@@ -9,7 +9,8 @@ It calculates and displays the total sales and average daily sales.
 
 public class SalesReport
 {
-  public static void main(String[] args) throws IOException{
+  public static void main(String[] args) throws IOException
+  {
 
     final int NUM_DAYS = 30;  // Number of days of sales
     String filename;          // The name of the file to open
