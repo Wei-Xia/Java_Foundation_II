@@ -11,6 +11,7 @@ public class ObjectDemo
 
     int maxNumbers;     // Max number of random numbers
     int number;         // To hold a random number
+    int list;
 
     // Create a Scanner object for keyboard input.
     Scanner keyboard = new Scanner(System.in);
@@ -30,8 +31,10 @@ public class ObjectDemo
       // Generate a random integer.
       number = rand.nextInt();
 
+      list = (int)number/10000;
+
       // Write the random integer to the file
-      outputFile.println(number);
+      outputFile.println(list);
     }
 
     // Close the file
