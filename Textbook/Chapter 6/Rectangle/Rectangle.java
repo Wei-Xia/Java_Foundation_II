@@ -5,7 +5,7 @@ Under construction!
 
 public class Rectangle
 {
-  private double lenth;
+  private double length;
   private double width;
 
   /**
