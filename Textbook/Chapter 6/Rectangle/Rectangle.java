@@ -28,5 +28,15 @@ public class Rectangle
     width = w;
   }
 
+  /**
+    The getLength method returns a Rectangle object's length
+    @param The value in the length field
+  */
+
+  public double getLength()
+  {
+    return length;
+  }
+
 
 }
