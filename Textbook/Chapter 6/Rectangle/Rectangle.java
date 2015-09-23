@@ -5,5 +5,16 @@ Under construction!
 
 public class Rectangle
 {
-  
+  private double lenth;
+  private double width;
+
+  /**
+    The setLength method stores a value in the length field
+    @param len The value to store in length
+  */
+
+  public void setLength(double len)
+  {
+    length = len;
+  }
 }
