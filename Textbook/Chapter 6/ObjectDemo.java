@@ -30,8 +30,12 @@ public class ObjectDemo
       // Generate a random integer.
       number = rand.nextInt();
 
-      
+      // Write the random integer to the file
+      outputFile.println(number);
     }
 
+    // Close the file
+    outputFile.close();
+    System.out.println("Done");
   }
 }
