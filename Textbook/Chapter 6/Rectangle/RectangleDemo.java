@@ -2,7 +2,7 @@
 This program demonstrates the Rectangle class's setLength, setWidth, getLength, getWidth and getArea methods.
 */
 
-public class LengthWidthDemo
+public class RectangleDemo
 {
   public static void main(String[] args)
   {
