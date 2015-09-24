@@ -4,7 +4,7 @@ import javax.swing.*;
   This program creates three instances of the Rectangle class.
 */
 
-public class RoomArea
+public class RoomAreas
 {
   public static void main(String[] args)
   {
