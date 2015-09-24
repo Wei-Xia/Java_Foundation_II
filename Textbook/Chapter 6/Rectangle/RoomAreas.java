@@ -11,5 +11,21 @@ public class RoomArea
       double number;      // To hold a number
       double totalArea;   // The total area
       String input;       // To hold user input
+
+      // Create three Rectangle objects
+      Rectangle kitchen = new Rectangle();
+      Rectangle bedroom = new Rectangle();
+      Rectangle den = new Rectangle();
+
+      // Get and store the dimension of the kitchen
+      input = JOptionPane.showInputDialog("What is the kitchen's length?");
+      number = Double.parseDouble(input);
+      kitchen.setLength(number);
+
+      input = JOptionPane.showInputDialog("What is the kitchen's width?");
+      number = Double.parseDouble(input);
+      kitchen.setWidth(number);
+
+
   }
 }
