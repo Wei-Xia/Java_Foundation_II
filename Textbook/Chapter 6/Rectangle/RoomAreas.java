@@ -44,6 +44,12 @@ public class RoomArea
       number = Double.parseDouble(input);
       den.setWidth(number);
 
+      // Calculate the total area of the rooms.
+      totalArea = kitchen.getArea() + bedroom.getArea() + den.getArea();
+
+      // Display the total area of the rooms.
+      JOptionPane.showMessageDialog(null, "The total area of the room is " + totalArea);
+
 
 
   }
