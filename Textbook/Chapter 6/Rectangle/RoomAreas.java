@@ -26,6 +26,15 @@ public class RoomArea
       number = Double.parseDouble(input);
       kitchen.setWidth(number);
 
+      // Get and store the dimension of the bedroom
+      input = JOptionPane.showInputDialog("What is the bedroom's length?");
+      number = Double.parseDouble(input);
+      bedroom.setLength(number);
+
+      input = JOptionPane.showInputDialog("What is the bedroom's width?");
+      number = Double.parseDouble(input);
+      bedroom.setWidth(number);
+
 
   }
 }
