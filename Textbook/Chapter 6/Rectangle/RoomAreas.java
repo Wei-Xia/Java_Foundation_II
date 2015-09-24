@@ -35,6 +35,16 @@ public class RoomArea
       number = Double.parseDouble(input);
       bedroom.setWidth(number);
 
+      // Get and store the dimension of the den
+      input = JOptionPane.showInputDialog("What is the den's length?");
+      number = Double.parseDouble(input);
+      den.setLength(number);
+
+      input = JOptionPane.showInputDialog("What is the den's width?");
+      number = Double.parseDouble(input);
+      den.setWidth(number);
+
+
 
   }
 }
