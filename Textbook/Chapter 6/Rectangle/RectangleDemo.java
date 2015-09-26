@@ -10,7 +10,7 @@ public class RectangleDemo
       Rectangle box = new Rectangle();
 
       // Call the object's setLength method, passing 10.0 as an argument
-      box.setLength(10.0);
+      box.setLength(15.0);
 
       // Call the object's setWidth method, passing 20.0 as an argument
       box.setWidth(20.0);
