@@ -21,6 +21,7 @@ public class CellPhone
     manufact = man;
     model = mod;
     retailPrice = price;
+  }
 
     /**
       The setManufact method sets the phone's manufacturer name.
@@ -77,10 +78,9 @@ public class CellPhone
       @return The phone's price
     */
 
-    public String getRetailPrice()
+    public double getRetailPrice()
     {
       return retailPrice;
     }
 
-  }
 }
