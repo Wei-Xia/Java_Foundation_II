@@ -1,9 +1,4 @@
-/**
-Rectangle class, phase 1
-Under construction!
-*/
-
-public class Rectangle
+public class RectangleWithConstructor
 {
   private double length;
   private double width;
@@ -14,7 +9,7 @@ public class Rectangle
     @param w   The width of the rectangle.
   */
 
-  public Rectangle(double len, double w)
+  public RectangleWithConstructor(double len, double w)
   {
     length = len;
     width = w;
