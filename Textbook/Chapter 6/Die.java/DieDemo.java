@@ -17,5 +17,21 @@ public class DiceDemo
       // Display the initial state of the dice
       System.out.println("This simulates the rolling of a " + DIE1_SIDES + " sided die and a "
                           + DIE2_SIDES + " sided die.");
+
+      System.out.println("initial value of the dice: ");
+      System.out.println(die1.getValue() + " " + die2.getValue());
+
+      // Roll the dice for five times.
+      System.out.println("Rolling the dice " + MAX_ROLLS) + " times.";
+
+      for (int i = 0; i < MAX_ROLLS; i++ )
+      {
+          // Roll the dice
+          die1.roll();
+          die2.roll();
+
+          // Display the values of the dice
+          System.out.println(die1.getValue() + " " + die2.getValue());
+      }
   }
 }
