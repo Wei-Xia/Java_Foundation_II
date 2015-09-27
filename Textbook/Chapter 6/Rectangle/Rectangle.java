@@ -17,7 +17,7 @@ public class Rectangle
   {
     length = len;
   }
-  
+
   /**
     The setWidth method stores a value in the width field
     @param w The value to store in width
