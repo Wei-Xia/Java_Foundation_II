@@ -62,5 +62,25 @@ public class CellPhone
       return manufact;
     }
 
+    /**
+      getModel method
+      @return The phone's model number
+    */
+
+    public String getModel()
+    {
+      return model;
+    }
+
+    /**
+      getRetailPrice method
+      @return The phone's price
+    */
+
+    public String getRetailPrice()
+    {
+      return retailPrice;
+    }
+
   }
 }
