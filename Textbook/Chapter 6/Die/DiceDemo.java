@@ -22,7 +22,7 @@ public class DiceDemo
       System.out.println(die1.getValue() + " " + die2.getValue());
 
       // Roll the dice for five times.
-      System.out.println("Rolling the dice " + MAX_ROLLS) + " times.";
+      System.out.println("Rolling the dice " + MAX_ROLLS + " times.");
 
       for (int i = 0; i < MAX_ROLLS; i++ )
       {
