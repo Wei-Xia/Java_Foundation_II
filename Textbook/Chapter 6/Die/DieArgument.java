@@ -16,7 +16,16 @@ public class DieArgument
       // Roll the dice.
       rollDie(sixDie);
       rollDie(twentyDie);
+  }
 
+  /**
+    This method simulates a die roll, displaying the die's number of sides and value.
+    @param d The Die object to roll
+  */
 
+  public static void rollDie(Die d)
+  {
+    // Display the number of sides.
+    
   }
 }
