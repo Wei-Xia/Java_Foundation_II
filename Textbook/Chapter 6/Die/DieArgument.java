@@ -26,6 +26,13 @@ public class DieArgument
   public static void rollDie(Die d)
   {
     // Display the number of sides.
-    
+    System.out.println("Rolling a " + d.getSides() + " sided die.");
+
+    // Roll the die
+    d.roll();
+
+    // Display the die's value
+    System.out.println("The die's value: " + d.getValue());
+
   }
 }
