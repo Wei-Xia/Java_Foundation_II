@@ -56,6 +56,26 @@ public class Dealer
     return result;
   }
 
+  /**
+    The getDie1Value method returns the value of die #1
+    @return The die1Value field
+  */
+
+  public int getDie1Value()
+  {
+    return die1Value;
+  }
+
+  /**
+    The getDie2Value method returns the value of die #2
+    @return The die2Value field
+  */
+
+  public int getDie2Value()
+  {
+    return die2Value;
+  }
+
 
 
 
