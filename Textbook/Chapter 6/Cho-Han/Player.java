@@ -51,6 +51,26 @@ public class Player
     points = points + newPoints
   }
 
+  /**
+    The getName method returns the player's name.
+    @return The value of the name field.
+  */
+
+  public String getName()
+  {
+    return name;
+  }
+
+  /**
+    The getGuess method returns the player's guess.
+    @return The value of the guess field/
+  */
+
+  public String getGuess()
+  {
+    return guess;
+  }
+
 
 
 
