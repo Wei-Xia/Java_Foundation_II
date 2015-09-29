@@ -33,4 +33,37 @@ public class Dealer
     die1Value = die1.getValue();
     die2Value = die2.getValue();
   }
+
+  /**
+    The getChoOrHan method returns the result of the dice roll, Cho or Han.
+    @return Either "Cho (even)" or "Han (odd)"
+  */
+
+  public String getChoOrHan()
+  {
+    String result;    // To hold the result
+
+    // Get the sum of the dice.
+    int sum = die1Value + die2Value;
+
+    // Determine even or odd
+    if (sum % 2 == 0)
+      result = "Cho (even)";
+    else
+      result = "Han (odd)";
+
+    // Return the result.
+    return result;
+  }
+
+
+
+
+
+
+
+
+
+
+
 }
