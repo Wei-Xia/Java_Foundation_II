@@ -21,4 +21,31 @@ public class Player
     guess = "";
     points = 0;
   }
+
+  /**
+    The makeGuess method causes the player to guess either "Cho (even)" or "Han (odd)".
+  */
+
+  public void makeGuess()
+  {
+    // Create a Random object
+    Random rand = new Random();
+
+    // Get a random number, either 0 or 1
+    int guessNumber = rand.nextInt(2);
+
+    // Conver the random number to a guess of either "Cho (even)" or "Han (odd)".
+    if (guessNumber = 0)
+      guess = "Cho (even)";
+    else
+      guess = "Han (odd)";
+  }
+
+
+
+
+
+
+
+
 }
