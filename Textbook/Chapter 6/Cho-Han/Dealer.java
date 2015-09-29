@@ -75,15 +75,4 @@ public class Dealer
   {
     return die2Value;
   }
-
-
-
-
-
-
-
-
-
-
-
 }
