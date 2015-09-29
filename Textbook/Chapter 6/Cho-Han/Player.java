@@ -71,11 +71,13 @@ public class Player
     return guess;
   }
 
+  /**
+    The getPoints method returns the plyaer's points
+    @return The value of the points field
+  */
 
-
-
-
-
-
-
+  public int getPoints()
+  {
+    return points;
+  }
 }
