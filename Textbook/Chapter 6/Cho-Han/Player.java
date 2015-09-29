@@ -41,6 +41,16 @@ public class Player
       guess = "Han (odd)";
   }
 
+  /**
+    The addPoints method adds a specified number of points to the player's current balance
+    @newPoints The points to add
+  */
+
+  public void addPoints(int newPoints)
+  {
+    points = points + newPoints
+  }
+
 
 
 
