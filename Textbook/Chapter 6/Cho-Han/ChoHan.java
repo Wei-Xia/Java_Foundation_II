@@ -53,7 +53,26 @@ public class ChoHan
 
       public static void roundResults(Dealer dealer, Player player1, Player player2)
       {
-        
+        // Show the dice value
+        System.out.printf("The dealer rolled %d and %d.\n",
+                            dealer.getDie1Value(), dealer.getDie2Value());
+
+        // Check each player's guess and award points
+        checkGuess(player1, dealer);
+        checkGuess(player2, dealer);
+      }
+
+      /**
+        The checkGuess method checks a player's guess against the dealer's result.
+        @param player The Player object to check.
+        @param dealer The Dealer object.
+      */
+
+      public static void checkGuess(Player player, Dealer dealer)
+      {
+        final int POINTS_TO_ADD = 1;                  // Points to award winner
+        String guess = player.getGuess();             // Player's guess
+        String choHanResult = dealer.getChoOrHan();   // Cho or Han
       }
 
 
