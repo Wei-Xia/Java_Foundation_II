@@ -85,7 +85,21 @@ public class ChoHan
         }
       }
 
+      /**
+        The displayGrandWinner method display the game's grand winner
+        @param player1 Player #1
+        @param player2 Player #2
+      */
 
+      public static void displayGrandWinner(Player player1, Player player2)
+      {
+        System.out.println("-------------------------------");
+        System.out.println("Game over. Here are the results: ");
+        System.out.printf("%s: %d points.\n", player1.getName(), player1.getPoints());
+        System.out.printf("%s: %d points.\n", player2.getName(), player2.getPoints());
+
+        if (player1.getPoints() > player2.getPoints()) 
+      }
 
 
 
