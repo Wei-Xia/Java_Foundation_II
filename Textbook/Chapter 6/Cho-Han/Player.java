@@ -35,7 +35,7 @@ public class Player
     int guessNumber = rand.nextInt(2);
 
     // Conver the random number to a guess of either "Cho (even)" or "Han (odd)".
-    if (guessNumber = 0)
+    if (guessNumber == 0)
       guess = "Cho (even)";
     else
       guess = "Han (odd)";
@@ -48,7 +48,7 @@ public class Player
 
   public void addPoints(int newPoints)
   {
-    points = points + newPoints
+    points = points + newPoints;
   }
 
   /**
