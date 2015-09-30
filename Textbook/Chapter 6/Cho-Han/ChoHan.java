@@ -43,7 +43,7 @@ public class ChoHan
 
       // Display the grand winner
       displayGrandWinner(player1, player2);
-    }
+  }
       /**
        The roundResults method determine the results of the current round.
        @param dealer The Dealer object
@@ -56,6 +56,7 @@ public class ChoHan
         // Show the dice value
         System.out.printf("The dealer rolled %d and %d.\n",
                             dealer.getDie1Value(), dealer.getDie2Value());
+        System.out.printf("Result: %s\n", dealer.getChoOrHan());
 
         // Check each player's guess and award points
         checkGuess(player1, dealer);
