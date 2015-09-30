@@ -19,5 +19,23 @@ public class ChoHan
 
       // Create the dealer
       Dealer dealer = new Dealer();
+
+      // Create the two players
+      Player player1 = new Player(player1Name);
+      Player player2 = new Player(player2Name);
+
+      // Play the rounds.
+      for (int round = 0; round < MAX_ROUNDS; round++)
+      {
+          System.out.println("-----------------------------");
+          System.out.printf("Now playing round %d.\n", round+1);
+
+          // Roll the dice
+          dealer.rollDice();
+
+          // The players make their guesses
+          player1.makeGuess();
+          player2.makeGuess();
+      }
   }
 }
