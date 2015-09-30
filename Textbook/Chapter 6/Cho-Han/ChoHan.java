@@ -73,6 +73,16 @@ public class ChoHan
         final int POINTS_TO_ADD = 1;                  // Points to award winner
         String guess = player.getGuess();             // Player's guess
         String choHanResult = dealer.getChoOrHan();   // Cho or Han
+
+        // Display the player's guess
+        System.out.printf("The player %s guesses %s.\n", player.getName(), player.getGuess());
+
+        // Award points if the player guessed correctly
+        if (guess.equalsIgnoreCase(choHanResult))
+        {
+            player.addPoints(POINTS_TO_ADD);
+            System.out.printf("Awarding %d point(s) to %s.\n", POINTS_TO_ADD, player.getName());
+        }
       }
 
 
