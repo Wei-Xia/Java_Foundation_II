@@ -43,5 +43,24 @@ public class ChoHan
 
       // Display the grand winner
       displayGrandWinner(player1, player2);
+
+      /**
+       The roundResults method determine the results of the current round.
+       @param dealer The Dealer object
+       @param player1 Player #1 object
+       @param player2 Player #2 object
+      */
+
+      public static void roundResults(Dealer dealer, Player player1, Player player2)
+      {
+        
+      }
+
+
+
+
+
+
+
   }
 }
