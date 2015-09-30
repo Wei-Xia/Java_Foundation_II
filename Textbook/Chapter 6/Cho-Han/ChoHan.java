@@ -36,6 +36,12 @@ public class ChoHan
           // The players make their guesses
           player1.makeGuess();
           player2.makeGuess();
+
+          // Determine the winner of this round
+          roundResults(dealer, player1, player2);
       }
+
+      // Display the grand winner
+      displayGrandWinner(player1, player2);
   }
 }
