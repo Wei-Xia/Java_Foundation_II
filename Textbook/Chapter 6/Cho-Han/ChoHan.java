@@ -98,12 +98,11 @@ public class ChoHan
         System.out.printf("%s: %d points.\n", player1.getName(), player1.getPoints());
         System.out.printf("%s: %d points.\n", player2.getName(), player2.getPoints());
 
-        if (player1.getPoints() > player2.getPoints()) 
+        if (player1.getPoints() > player2.getPoints())
+          System.out.println(player1.getName() + " is the grand winner!";
+        else if (player2.getPoints() > player1.getPoints())
+          System.out.println(player2.getName() + " is the grand winner!";
+        else
+          System.out.println("Both player are tied!");
       }
-
-
-
-
-
-  }
 }
