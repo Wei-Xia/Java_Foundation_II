@@ -27,7 +27,7 @@ public class ChoHan
       // Play the rounds.
       for (int round = 0; round < MAX_ROUNDS; round++)
       {
-          System.out.println("------------------------------");
+          System.out.println("-------------------------------");
           System.out.printf("Now playing round %d.\n", round+1);
 
           // Roll the dice
