@@ -15,5 +15,20 @@ public class ArrayDemo2
     Scanner keyboard = new Scanner(System.in);
 
     System.out.println("Enter the hours worked by " + EMPLOYEES + " employees.");
+
+    // Get the hours for each employee
+    for (int index = 0; index < EMPLOYEES; index++)
+    {
+        System.out.print("Employee " + (index+1) + ": ");
+        hours[index] = keyboard.nextInt();
+    }
+
+    System.out.println("The hours you entered are: ");
+
+    // Display the values entered
+    for (int i=0; i<Employee; i++)
+    {
+      System.out.println(hours[index]);
+    }
   }
 }
