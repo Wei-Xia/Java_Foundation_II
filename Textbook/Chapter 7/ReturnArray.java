@@ -11,7 +11,7 @@ public class ReturnArray
       values = getArray();
 
       for (double num : values) {
-        System.out.print(num + " ");
+        System.out.println(num + " ");
       }
   }
 
