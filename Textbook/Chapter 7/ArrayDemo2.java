@@ -1,4 +1,4 @@
-import java.util.*
+import java.util.*;
 
 /**
   This program shows an array being processed with loops
@@ -26,9 +26,9 @@ public class ArrayDemo2
     System.out.println("The hours you entered are: ");
 
     // Display the values entered
-    for (int i=0; i<Employee; i++)
+    for (int i=0; i<EMPLOYEES; i++)
     {
-      System.out.println(hours[index]);
+      System.out.println(hours[i]);
     }
   }
 }
