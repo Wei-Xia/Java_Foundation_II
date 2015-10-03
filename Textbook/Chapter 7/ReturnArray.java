@@ -9,5 +9,19 @@ public class ReturnArray
       double [] values;
 
       values = getArray();
+
+      for (double num : values) {
+        System.out.print(num + " ");
+      }
+  }
+
+  /**
+    getArray method
+    @return A reference to an array of doubles.
+  */
+
+  public static double[] getArray()
+  {
+    
   }
 }
