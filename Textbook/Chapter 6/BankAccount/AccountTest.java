@@ -21,5 +21,15 @@ public class AccountTest
 
       // Deposit the user's pay into the account
       account.deposit(input);
+
+      // Display the new balance
+      JOptionPane.showMessageDialog(null, String.format("You pay has been deposited.\n" + "Your current balance is $%,.2f", account.getBalance()));
+
+      // Withdraw cashes from the account.
+      input = JOptionPane.showInputDialog("How much would you like to withdraw?");
+      account.withdraw(input);
+
+      // Display the new balance
+      JOptionPane.showMessageDialog(null, String.format("Now your balance is $%,.2f", account.getBalance()));
   }
 }
