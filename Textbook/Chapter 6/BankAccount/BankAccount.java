@@ -24,4 +24,14 @@ public class BankAccount
   {
       balance = startBalance;
   }
+
+  /**
+    This constructor sets the starting balance to the value in the String argument.
+    @param str The starting balance, as a String.
+  */
+
+  public BankAccount(String str)
+  {
+    balance = Double.parseDouble(str);
+  }
 }
