@@ -95,8 +95,13 @@ public class BankAccount
     balance = Double.parseDouble(str);
   }
 
+  /**
+    The getBalance method returns the account balance.
+    @return The value in the balance field
+  */
 
-
-
-
+  public double getBalance()
+  {
+    return balance;
+  }
 }
