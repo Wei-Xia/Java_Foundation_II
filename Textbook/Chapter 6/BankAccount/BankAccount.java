@@ -34,4 +34,19 @@ public class BankAccount
   {
     balance = Double.parseDouble(str);
   }
+
+  /**
+    The deposit method makes a deposit into the account.
+    @param amount The amount to add to the balance field.
+  */
+
+  public void deposit(double amount)
+  {
+    balance = balance + amount;
+  }
+
+
+
+
+
 }
