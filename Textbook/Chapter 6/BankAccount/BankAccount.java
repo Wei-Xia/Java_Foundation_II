@@ -65,6 +65,17 @@ public class BankAccount
     balance = balance - amount;
   }
 
+  /**
+    The withdraw method withdraws an amount from the account
+    @param str The amount to subtract from the balance field, as a String.
+  */
+
+  public void withdraw(String str)
+  {
+    balance = balance - Double.parseDouble(str);
+  }
+
+
 
 
 
