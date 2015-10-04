@@ -75,6 +75,25 @@ public class BankAccount
     balance = balance - Double.parseDouble(str);
   }
 
+  /**
+    The setBalance method sets the account balance.
+    @param b The value to store in the balance field
+  */
+
+  public void setBalance(double b)
+  {
+    balance = b;
+  }
+
+  /**
+    The setBalance method sets the account balance.
+    @param str The value, as a String, to store in the balance field.
+  */
+
+  public void setBalance(String str)
+  {
+    balance = Double.parseDouble(str);
+  }
 
 
 
