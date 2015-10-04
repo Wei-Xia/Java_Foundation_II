@@ -45,6 +45,26 @@ public class BankAccount
     balance = balance + amount;
   }
 
+  /**
+    The deposit method makes a deposit into the account
+    @param str The amount to add to the balance field, as a String.
+  */
+
+  public void deposit(String str)
+  {
+    balance = balance + Double.parseDouble(str);
+  }
+
+  /**
+    The withdraw method withdraws an amount from the account.
+    @param amount The amount to subtract from the balance field.
+  */
+
+  public void withdraw(double amount)
+  {
+    balance = balance - amount;
+  }
+
 
 
 
