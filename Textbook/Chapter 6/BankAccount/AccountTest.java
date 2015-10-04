@@ -31,5 +31,7 @@ public class AccountTest
 
       // Display the new balance
       JOptionPane.showMessageDialog(null, String.format("Now your balance is $%,.2f", account.getBalance()));
+
+      System.exit(0);
   }
 }
