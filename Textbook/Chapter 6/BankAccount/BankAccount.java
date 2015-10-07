@@ -96,7 +96,7 @@ public class BankAccount
   }
 
   /**
-    The getBalance method returns the account balance
+    The getBalance method returns the account balance.
     @return The value in the balance field
   */
 
