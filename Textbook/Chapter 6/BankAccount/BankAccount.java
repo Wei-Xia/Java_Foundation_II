@@ -26,7 +26,7 @@ public class BankAccount
   }
 
   /**
-    This constructor sets the starting balance to the value in the String argument.
+    This constructor sets the starting balance to the value in the String argument
     @param str The starting balance, as a String.
   */
 
