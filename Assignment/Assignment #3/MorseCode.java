@@ -17,24 +17,24 @@ class MorseCode
 
     String sentence;
 
-    Scanner keyboard = new Scanner(System.in);
-
     System.out.println("Please enter a sentence in English, or enter $ to quit");
 
+    Scanner keyboard = new Scanner(System.in);
     sentence = keyboard.nextLine();
 
-    while(sentence != $)
-    {
-      sentence = sentence.toUpperCase ();
+    sentence = sentence.toUpperCase();
 
+    while(sentence != "$")
+    {
       for ( int a = 0; a < English.length; a++ )
       {
         for ( int b = 0; b < sentence.length (); b++ )
         {
           if ( English [ a ] == sentence.charAt ( b ) )
-          System.out.printf( Morse [ a ] + " ");
+          System.out.printf(Morse[a]);
         }
       }
     }
+
   }
 }
