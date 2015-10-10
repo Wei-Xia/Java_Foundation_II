@@ -23,11 +23,7 @@ class MorseCode
                     if ( English [ x ] == c.charAt ( y ) )
 
                     System.out.print ( Morse [ x ] + " " );
-
-
                 }
-
-            }      
-
+            }
   }
 }
