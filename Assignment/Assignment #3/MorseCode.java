@@ -5,14 +5,23 @@ class MorseCode
   public static void main(String[] args)
   {
 
-    char [] English = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k',
-                        'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v',
-                        'w', 'x', 'y', 'z', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0' };
-    String [] Morse = { ".-" , "-..." , "-.-." , "-.." , "." , "..-." , "--." , "...." ,
-                        ".." , ".---" , "-.-" , ".-.." , "--" , "-." , "---" , ".--." ,
-                        "--.-" ,  ".-." , "..." , "-" , "..-" , "...-" , ".--" , "-..-" , "-.--" , "--.." , "|" };
+    char [] English = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',
+                        'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P',
+                        'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X',
+                        'Y', 'Z'};
 
-    String c = Input.getString ( "Please enter a sentence in English, and separate each word with a blank space." );
+    String [] Morse = { "·-", "-···", "-·-·", "-··", "·", "··-·", "--·", "····",
+                        "··", "·---", "-·-", "·-··", "--", "-·", "---", "·--·",
+                        "--·-",  "·-·", "···", "-", "··-", "···-", "·--", "-··-",
+                        "-·--", "--··"};
+
+    String c;
+
+    Scanner keyboard = new Scanner(System.in);
+
+    System.out.print("Please enter a sentence in English.");
+
+    c = keyboard.nextLine();
 
             c = c.toLowerCase ();
 
