@@ -15,24 +15,24 @@ class MorseCode
                         "--·-",  "·-·", "···", "-", "··-", "···-", "·--", "-··-",
                         "-·--", "--··"};
 
-    String c;
+    String sentence;
 
     Scanner keyboard = new Scanner(System.in);
 
-    System.out.print("Please enter a sentence in English.");
+    System.out.println("Please enter a sentence in English:");
 
-    c = keyboard.nextLine();
+    sentence = keyboard.nextLine();
 
-            c = c.toLowerCase ();
+    sentence = sentence.toUpperCase ();
 
-            for ( int x = 0; x < English.length; x++ )
-            {
-                for ( int y = 0; y < c.length (); y++ )
-                {
-                    if ( English [ x ] == c.charAt ( y ) )
+    for ( int a = 0; a < English.length; a++ )
+    {
+      for ( int b = 0; b < sentence.length (); b++ )
+      {
+        if ( English [ a ] == sentence.charAt ( b ) )
+        System.out.println( Morse [ a ] + " " );
+      }
+    }
 
-                    System.out.print ( Morse [ x ] + " " );
-                }
-            }
   }
 }
