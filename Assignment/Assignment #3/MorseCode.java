@@ -19,20 +19,22 @@ class MorseCode
 
     Scanner keyboard = new Scanner(System.in);
 
-    System.out.println("Please enter a sentence in English:");
+    System.out.println("Please enter a sentence in English, or enter $ to quit");
 
     sentence = keyboard.nextLine();
 
-    sentence = sentence.toUpperCase ();
-
-    for ( int a = 0; a < English.length; a++ )
+    while(sentence != $)
     {
-      for ( int b = 0; b < sentence.length (); b++ )
+      sentence = sentence.toUpperCase ();
+
+      for ( int a = 0; a < English.length; a++ )
       {
-        if ( English [ a ] == sentence.charAt ( b ) )
-        System.out.println( Morse [ a ] + " " );
+        for ( int b = 0; b < sentence.length (); b++ )
+        {
+          if ( English [ a ] == sentence.charAt ( b ) )
+          System.out.printf( Morse [ a ] + " ");
+        }
       }
     }
-
   }
 }
