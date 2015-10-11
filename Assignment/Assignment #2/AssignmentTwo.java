@@ -1,6 +1,6 @@
 import java.util.*;
 
-class ThreePointsOnACircle
+class AssignmentTwo
 	{
 		/* Determine if k is on the arc when moving clockwise from j to i on a circle of size n. */
 
@@ -22,6 +22,11 @@ class ThreePointsOnACircle
 				System.out.print("\nEnter third points(k): ");
 				k = keyboard.nextInt();
 
+				n = getAndVerfyInput("Enter size of circle, n", 0, Integer.MAX_VALUE);
+				i = getAndVerfyInput("Enter first point(i)", 0, n);
+				j = getAndVerfyInput("Enter second point(j)", XX, XX);
+				k = getAndVerfyInput("Enter third point(k)", YY, YY);
+
 				// Determine if n, i, j and k satisfy all 4 necessary conditions and display appropriate message
 				if (n>0 && i>=0 && i<=n && j>=0 && j<=n && k>=0 && k<=n && i!=j &&
 						((k<=i&&i<j)||(i<j&&j<k)||(j<k&&k<=i)))
@@ -33,6 +38,6 @@ class ThreePointsOnACircle
 
 		static int getAndVerfyInput (String userPrompt, int lowerBound, int upperBound)
 			{
-				
+				System.out.println(userPrompt);
 			}
 	}
