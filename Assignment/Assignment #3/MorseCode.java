@@ -21,13 +21,19 @@ class MorseCode
       System.out.println("Please enter a sentence in English, or enter $ to quit");
       sentence = keyboard.nextLine();
       sentence = sentence.toUpperCase();
+
+      while(!sentence.contains("$")){
       for ( int a = 0; a < English.length; a++ )
       {
         for ( int b = 0; b < sentence.length (); b++ )
         {
           if ( English[a] == sentence.charAt(b))
-          System.out.printf(Morse[a]+"b");
+          System.out.print(Morse[a]+"b");
         }
+      }
+      System.out.println("\nPlease enter a sentence in English, or enter $ to quit");
+      sentence = keyboard.nextLine();
+      sentence = sentence.toUpperCase();
       }
 
 
