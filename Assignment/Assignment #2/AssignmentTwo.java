@@ -8,17 +8,42 @@ class AssignmentTwo
 			{
 				int n,i,j,k;					// n is size of circle, and i, j and k are the circular coordinates of 3 points on it
 
-				n = getAndVerfyInput("Enter size of circle, n", 0, Integer.MAX_VALUE);
-				i = getAndVerfyInput("Enter first point(i)", 0, n);
-				j = getAndVerfyInput("Enter second point(j)", 0, n);
-				k = getAndVerfyInput("Enter third point(k)", i, j);
+				// n = getAndVerfyInput("Enter size of circle, n", 0, Integer.MAX_VALUE);
+				// i = getAndVerfyInput("Enter first point(i)", 0, n);
+				// j = getAndVerfyInput("Enter second point(j)", 0, n);
+				// k = getAndVerfyInput("Enter third point(k)", i, j);
+				//
+				// // Determine if n, i, j and k satisfy all 4 necessary conditions and display appropriate message
+				// if (n>0 && i>=0 && i<=n && j>=0 && j<=n && k>=0 && k<=n && i!=j &&
+				// 		((k<=i&&i<j)||(i<j&&j<k)||(j<k&&k<=i)))
+				// 	System.out.println("\nk lies on the arc from j to i when moving clockwise on a circle of size n.");
+				// else
+				// 	System.out.println("\nk does not lie on the arc from j to i when moving clockwise on a circle of size n.");
 
-				// Determine if n, i, j and k satisfy all 4 necessary conditions and display appropriate message
-				if (n>0 && i>=0 && i<=n && j>=0 && j<=n && k>=0 && k<=n && i!=j &&
-						((k<=i&&i<j)||(i<j&&j<k)||(j<k&&k<=i)))
-					System.out.println("\nk lies on the arc from j to i when moving clockwise on a circle of size n.");
-				else
-					System.out.println("\nk does not lie on the arc from j to i when moving clockwise on a circle of size n.");
+				do {
+					n = getAndVerfyInput("Enter sieze of circle, n", Integer.MAX_VALUE, 0, Integer.MAX_VALUE);
+					if (n == 0) break;
+
+					i = getAndVerfyInput("Enter first point(i)",n, 0, n);
+					do {
+						j = getAndVerfyInput("Enter second point(j)", 0, n);
+					} while ( j == i);
+
+					k = getAndVerfyInput("Enter third point(k)", n, 0, n);
+
+					if (j>i) {
+						if (k <= j && k >i) {
+								System.out.println("\nk does not lie on the arc from j to i when moving clockwise on a circle of size n.");
+						}
+						else
+							System.out.println("\nk lies on the arc from j to i when moving clockwise on a circle of size n.");
+					}
+					else if (k > j && k <= i) {
+							System.out.println("\nk lies on the arc from j to i when moving clockwise on a circle of size n.");
+					}
+					else
+						System.out.println("\nk doesn't lie on the arc from j to i when moving clockwise on a circle of size n.");
+				} while ( n != 0);
 			}
 
 		static int getAndVerfyInput(String userPrompt, int lowerBound, int upperBound)
