@@ -7,14 +7,12 @@ class AssignmentFour
   {
     System.out.println("Enter a sentence:");
     Scanner keyboard = new Scanner(System.in);
-     
+
 
     StringTokenizer st = new StringTokenizer("this is a test");
     while (st.hasMoreTokens())
     {
     System.out.println(st.nextToken());
     }
-
-
   }
 }
