@@ -42,5 +42,4 @@ public class FifteenPuzzleSuccessorFunction implements SuccessorFunction {
 		newBoard.setBoard(board.getPositions());
 		return newBoard;
 	}
-
 }
