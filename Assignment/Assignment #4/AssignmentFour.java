@@ -1,12 +1,15 @@
 import java.util.StringTokenizer;
 import java.util.Scanner;
+import java.util.ArrayList;
+
 
 class AssignmentFour
 {
   public static void main(String[] args)
   {
-	while (true)
-	{
+
+    while (true)
+	   {
 		System.out.println("Enter a sentence:");
 		Scanner keyboard = new Scanner(System.in);
 		String sentence = keyboard.nextLine();
@@ -15,16 +18,19 @@ class AssignmentFour
 		{
 			break;
 		}
-		else
+
+    else
 		{
       StringTokenizer st = new StringTokenizer(sentence);
       // ArrayList sentenceElement = new ArrayList();
+      List<String> sentenceElement = new ArrayList<>();
+
 
       while (st.hasMoreTokens())
       {
         System.out.println(st.nextToken());   // Output each words
 
-        // sentenceElement.add(st.nextToken());
+        sentenceElement.add(st.nextToken());
 
 
         // String i = st.nextToken();
