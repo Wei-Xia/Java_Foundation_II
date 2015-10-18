@@ -1,10 +1,11 @@
+import java.util.StringTokenizer;
+import java.util.Scanner;
 import java.util.*;
 
 class AssignmentFour
 {
   public static void main(String[] args)
   {
-
     while (true)
 	  {
 		    System.out.println("Enter a sentence:");
@@ -13,15 +14,16 @@ class AssignmentFour
 
 		    if (sentence.isEmpty())      // quit the program when user enter an empty string
 		    {
-			       break;
+			      break;
 		    }
         else
 		    {
             StringTokenizer st = new StringTokenizer(sentence);
 
+            List<String> sentenceElement = new ArrayList<String>();
+
             while (st.hasMoreTokens())
             {
-              List<String> sentenceElement = new ArrayList<String>();
               sentenceElement.add(st.nextToken());
             }
 
