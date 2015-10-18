@@ -17,30 +17,31 @@ class AssignmentFour
 		}
 		else
 		{
-			// StringTokenizer st = new StringTokenizer(sentence);
-			// String[] arrayElement = new String();
-      //
-      // while (st.hasMoreTokens())
-		  //   {
-			// 	    for(int i = 0; i < arrayElement.length; i++)
-			// 	      {
-			// 		        arrayElement[index] = i;
-			// 	      }
-      //
-			// 	          for (int i = 0; i < arrayElement.length; i++)
-  		// 		            {
-			// 		       System.out.println(arrayElement[index]);
-			// 	              }
-      //
-      //   System.out.println(st.nextToken());
-		  //   }
       StringTokenizer st = new StringTokenizer(sentence);
+      // ArrayList sentenceElement = new ArrayList();
 
       while (st.hasMoreTokens())
       {
-        System.out.println(st.nextToken());
+        System.out.println(st.nextToken());   // Output each words
+
+        // sentenceElement.add(st.nextToken());
+
+
+        // String i = st.nextToken();
+        // for(int index = 0 ;index < arrayElement.length; index++)
+        // {
+        //   arrayElement[index]= i;
+        // }
       }
+
+      // for(int index = 0; index < arrayElement.length; index++)
+      // {
+      //   System.out.println(arrayElement[index]);
+      // }
 		}
+
+
+
 	}
   }
 }
