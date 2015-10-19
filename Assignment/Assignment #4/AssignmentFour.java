@@ -2,7 +2,7 @@ import java.util.StringTokenizer;
 import java.util.Scanner;
 import java.util.*;
 
-class AssignmentFour
+class AssignmentFourOne
 {
   public static void main(String[] args)
   {
