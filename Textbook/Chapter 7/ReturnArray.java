@@ -22,7 +22,7 @@ public class ReturnArray
 
   public static double[] getArray()
   {
-    double[] array = {1.2, 3.4, 4.5, 6.5, 53.34};
+    double[] array = {1.2, 3.4, 4.5, 6.5, 53.56};
 
     return array;
   }
