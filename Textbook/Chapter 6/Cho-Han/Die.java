@@ -52,5 +52,4 @@ public class Die
   {
     return value;
   }
-
 }
