@@ -47,4 +47,5 @@ public class CreditCard
   {
     JOptionPane.showMessageDialog(null, "I'm sorry. You don't qualify for the credit card!");
   }
+  
 }
