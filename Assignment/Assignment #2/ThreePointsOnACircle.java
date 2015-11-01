@@ -35,7 +35,7 @@ class ThreePointsOnACircle
 
 		/* PROMPT USER, RECEIVE INPUT, AND VERIFY THAT IT'S WITHIN RANGE; REPEAT IF NECESSARY */
 
-		static int getAndVerifyInput(String userPrompt, int previousValue; int lowerBound, int upperBound)
+		static int getAndVerifyInput(String userPrompt, int previousValue, int lowerBound, int upperBound)
 			{
 				int input;			//Value input by user
 				do
