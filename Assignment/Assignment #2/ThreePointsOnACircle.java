@@ -31,19 +31,20 @@ class ThreePointsOnACircle
             else
               System.out.println("\n\nk does not lie on the arc from j to i when moving clockwise on a circle of size n.");
           }													//End of while(true)
-				}														//End of main method
+			}															//End of main method
 
 		/* PROMPT USER, RECEIVE INPUT, AND VERIFY THAT IT'S WITHIN RANGE; REPEAT IF NECESSARY */
 
 		static int getAndVerifyInput(String userPrompt, int previousValue; int lowerBound, int upperBound)
 			{
-				int input;
+				int input;			//Value input by user
 				do
 					{
-						System.out.print(userPrompt + ("\'" + REUSE_PREVIOUS_INPUT + "\'" + "to use previously entered value):");
+						System.out.print(userPrompt + "(\'" + REUSE_PREVIOUS_INPUT + "\'" + "to use previously entered value):");
 						input = keyboard.nextInt();
 
-						if (input == REUSE_PREVIOUS_INPUT)  input = previousValue;   // Adjust input if user wants previously entered value is to be re-used.
+						if (input == REUSE_PREVIOUS_INPUT)
+							input = previousValue;   // Adjust input if user wants previously entered value is to be re-used.
 					}
 
 				while (input == REUSE_PREVIOUS_INPUT || input < lowerBound || input > upperBound);   //Re-prompt & re-input until we get valid value.
