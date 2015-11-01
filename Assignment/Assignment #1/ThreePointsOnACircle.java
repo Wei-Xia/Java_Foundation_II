@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.*;					// Need this for Scanner.
 
 class ThreePointsOnACircle
 	{
