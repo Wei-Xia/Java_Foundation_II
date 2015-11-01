@@ -25,15 +25,29 @@ class ThreePointsOnACircle
             k = getAndVerifyInput("Enter third point, k", k, 0, n);
 
             // Determine if n, i, j and k satisfy all 4 necessary conditions and display appropriate message
-            if (n>0 && i>=0 && i<=n && j>=0 && j<=n && k>=0 && k<=n && i!=j &&
-                ((k<=i&&i<j)||(i<j&&j<k)||(j<k&&k<=i)))
+            if (n>0 && i>=0 && i<=n && j>=0 && j<=n && k>=0 && k<=n && i!=j &&								// Conditions 1-3
+                ((k<=i&&i<j)||(i<j&&j<k)||(j<k&&k<=i)))																				// Conditions 4
               System.out.println("\n\nk lies on the arc from j to i when moving clockwise on a circle of size n.");
             else
               System.out.println("\n\nk does not lie on the arc from j to i when moving clockwise on a circle of size n.");
-          }
+          }													//End of while(true)
+				}														//End of main method
 
+		/* PROMPT USER, RECEIVE INPUT, AND VERIFY THAT IT'S WITHIN RANGE; REPEAT IF NECESSARY */
 
+		static int getAndVerifyInput(String userPrompt, int previousValue; int lowerBound, int upperBound)
+			{
+				int input;
+				do
+					{
+						System.out.print(userPrompt + ("\'" + REUSE_PREVIOUS_INPUT + "\'" + "to use previously entered value):");
+						input = keyboard.nextInt();
 
+						if (input == REUSE_PREVIOUS_INPUT)  input = previousValue;   // Adjust input if user wants previously entered value is to be re-used.
+					}
 
-			}
-	}
+				while (input == REUSE_PREVIOUS_INPUT || input < lowerBound || input > upperBound);   //Re-prompt & re-input until we get valid value.
+
+				return input;							// Validated input is returned to caller.
+			}														// End of getAndVerifyInput method.
+	}																// End of class ThreePointsOnACircle.
