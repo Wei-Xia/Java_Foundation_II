@@ -4,8 +4,8 @@ class ThreePointsOnACircle
 	{
 		/* Determine if k is on the arc when moving clockwise from j to i on a circle of size n. */
 
-    static Scanner keyboard = new Scanner(System.in);       // Global, to avoid repeated re-instantiation each time getAndVerifyInput is called.
-    static final int REUSE_PREVIOUS_INPUT = -1;             // Value input by user used to signal that previously entered value is to be re-used.
+    	static Scanner keyboard = new Scanner(System.in);       // Global, to avoid repeated re-instantiation each time getAndVerifyInput is called.
+    	static final int REUSE_PREVIOUS_INPUT = -1;             // Value input by user used to signal that previously entered value is to be re-used.
 
 		public static void main(String[] args)
 			{
