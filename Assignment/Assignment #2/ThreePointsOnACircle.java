@@ -50,5 +50,5 @@ class ThreePointsOnACircle
 				while (input == REUSE_PREVIOUS_INPUT || input < lowerBound || input > upperBound);   //Re-prompt & re-input until we get valid value.
 
 				return input;							// Validated input is returned to caller.
-			}														// End of getAndVerifyInput method.
-	}																// End of class ThreePointsOnACircle.
+			}											// End of getAndVerifyInput method.
+	}													// End of class ThreePointsOnACircle.
