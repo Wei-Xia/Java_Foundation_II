@@ -11,9 +11,7 @@
  *
  */
 
-
-
-public class TheBoard {
+public class Board {
 
 	private int [] [] myBoard = new int [3] [3];
 
@@ -22,7 +20,7 @@ public class TheBoard {
 	 * Builds a 3 by 3 array and fills it with zeros -- and empty
 	 * tic tac toe board.
 	 */
-	public TheBoard()
+	public Board()
 	{
 		for(int row = 0; row < 3; row++)
 		{
@@ -33,14 +31,7 @@ public class TheBoard {
 		}
 	}
 
-	/*
-	 * copyBoard
-	 * creates a copy of the curent board.
-	 */
-	public int [] [] copyBoard()
-	{
-		return myBoard;
-	}
+
 
 	/*
 	 * didSomeoneWin checks for a winner or a cat's game
@@ -141,31 +132,5 @@ public class TheBoard {
 	{
 		if(myBoard [row] [column] == 0) return false;
 		else return true;
-	}
-
-	/*
-	 *  toString enables printing out of the tic tac toe board
-	 * Returns: printBoard, a string containing the current state of the board
-	 */
-	public String toString()
-	{
-		String printBoard = "";
-		char XorO;
-		int position = 49;
-
-		for(int row = 0; row < 3; row++)
-		{
-
-			for(int column = 0; column < 3; column++)
-			{
-				if(myBoard[row] [column] == 1) XorO = (char) (myBoard [row] [column] + 78); // an O
-				else if(myBoard[row] [column] == 20) XorO = (char) (myBoard [row] [column] + 68); // an X
-				else XorO = (char) (position);
-				position++;
-				printBoard = printBoard + XorO + " ";
-			}
-			printBoard = printBoard + "\n" ; // starts a new line at the end of a row
-		}
-		return printBoard;
 	}
 }
