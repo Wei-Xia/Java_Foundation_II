@@ -51,12 +51,6 @@ public class TicTacToe {
 		}
 		while(badInput);
 
-		double coinToss = Math.random(); // Coin toss to see who goes first
-		if(coinToss < .5) System.out.println("X wins the coin toss and will go first.");
-		else System.out.println("O wins the coin toss and will go first.");
-
-
-
 		int [] choice = new int [2];
 		char winner;
 		int turn = 1;
@@ -65,7 +59,7 @@ public class TicTacToe {
 
 		while(true) // loop only breaks when X or O wins, or a cat's game
 		{
-			if( (turn == 1 && coinToss < .5) || turn > 1) // skips X's turn if X losses coin toss
+			if( (turn == 1 ) || turn > 1) // skips X's turn if X losses coin toss
 			{
 				if(players == 2) // Human player
 				{
@@ -81,7 +75,7 @@ public class TicTacToe {
 				aBoard.markX(choice[0], choice[1]); // mark an 'X' (20) on the board
 
 				winner = aBoard.didSomeoneWin(); // Check for a win
-				if( winner != 'N') break;
+				if(winner != 'N') break;
 
 				System.out.println(aBoard);
 

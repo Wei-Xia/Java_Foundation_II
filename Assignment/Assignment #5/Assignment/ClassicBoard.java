@@ -12,16 +12,6 @@ public class ClassicBoard
       board = new int[3][3];
    }
 
-
-
- /**
-  * Creates a move in the board where player owns square square (1-9).
-  *
-  * @param player - the player whose turn it is currently (int)
-  * @param square - the square with the move to return (int)
-  * @return true - the player move is in the square (boolean)
-  * @return false - the player's move is invalid (boolean)
-  */
    public boolean makeMove(int player, int square)
    {
       int x = square / 3;
