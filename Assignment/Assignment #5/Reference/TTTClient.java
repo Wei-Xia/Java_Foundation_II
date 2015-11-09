@@ -1,5 +1,11 @@
 import java.util.Scanner;
 
+/**
+* This class is a client for our Tic-Tac-Toe game.
+*
+* @author Christina Grajales
+* @version 4-26-2012
+*/
 public class TTTClient
 {
    public static void main(String[] args)
@@ -8,7 +14,8 @@ public class TTTClient
       ClassicBoard b = new ClassicBoard();
       ClassicAI ai = new ClassicAI();
       int numberOfMoves = 1;
-      int humansLastMove = -1;
+   //*****
+   int humansLastMove = -1;
 
       System.out.println("The Computer is 1, you are 2, and 0 is an empty spot.");
       System.out.println("The Computer's Turn.");
@@ -27,7 +34,7 @@ public class TTTClient
                System.out.println("You entered an invalid move. Please enter a new one.");
                in1 = scan.nextInt();
             }
-            humansLastMove = in1;
+       humansLastMove = in1;
             b.printBoard();
             numberOfMoves++;
          }
@@ -42,7 +49,6 @@ public class TTTClient
             numberOfMoves++;
          }
       }
-
       if (b.findWin() == 1)
      {
        System.out.println("The Winner is X (The Computer)");
