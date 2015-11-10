@@ -20,13 +20,13 @@ class WordCount
             String[] wordCollection = new String[word.countTokens()];   // stores words as they are encountered
 
             int numberOfWords = 0;                // number of distinct words encountered so far
-            int[] wordCount = new int [words.countTokens()];      // wordCount[i] is number of occurrences-1 of wordCollection[i] in line
+            int[] wordCount = new int [word.countTokens()];      // wordCount[i] is number of occurrences-1 of wordCollection[i] in line
             int i;    // general-purpose index used to step through the entires of wordCollection in the search for match with word, and to display words and counts
 
-            while (words.hasMoreTokends())            // keep going while there are still words left in the line to process
+            while (word.hasMoreTokends())            // keep going while there are still words left in the line to process
               {
-                String word = words.nextToken();          // word is current word of line we are processing
-                wordCollection[numberOfWords] = words;    // put word at the end to guarantee loop termination, since we're guaranteed to find a match
+                String word = word.nextToken();          // word is current word of line we are processing
+                wordCollection[numberOfWords] = word;    // put word at the end to guarantee loop termination, since we're guaranteed to find a match
                 for (i = 0; !wordCollection[i].equals(word); i++);    // search wordCollection to determine if word is already stored in it
                 if (i == numberOfWords) numberOfWords++;        // word wasn't there previously, now it's in because we inserted 2 lines above
                 else wordCount[i]++;          // word was found there, so increment counter that tracks number of occurrences of word in line
