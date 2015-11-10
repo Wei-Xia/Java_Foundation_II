@@ -1,27 +1,17 @@
-/*
- * Created on May 12, 2004
- * by Jake Scruggs
- *
- * TheBoard is a tic tac toe board which represents it in a 2D array
- * It can make a copy of itself.
- * Check for a win or a Cat's game.
- * Check if a space is occupied.
- * Mark an X or an O (X is a 20 in the array and O is a 1.  An empty space is a 0.)
- * And create a text version of itself.
- *
- */
-
-
+/**
+Board can represents 2D 3*3 array for TicTacToe game.
+It can check if someone wins or a cat's game.
+It can check if a square has been chosen.
+It can also mark an X or O from the player's choice.
+*/
 
 public class Board {
 
-	private int [] [] myBoard = new int [3] [3];
+	private int [][] myBoard = new int [3][3];
 
 	/*
-	 * TheBoard constructor.
-	 * Builds a 3 by 3 array and fills it with zeros -- and empty
-	 * tic tac toe board.
-	 */
+	 Create a 3 by 3 array and use for a tic tac toe board.
+	*/
 	public Board()
 	{
 		for(int row = 0; row < 3; row++)
@@ -32,69 +22,93 @@ public class Board {
 			}
 		}
 	}
+	
+	/*
+	markFirst makes places a 2 accumulation for X
+	*/
+	public void markFirst(int row, int column)
+	{
+		myBoard [row] [column] = 2;
+	}
 
 	/*
-	 * didSomeoneWin checks for a winner or a cat's game
-	 * Returns: winner, a char
-	 * 'N' is no winner
-	 * 'X' is X won
-	 * 'O' is O won
-	 * 'C' is a cat's game
-	 */
-	public char Win()
+	markSecond makes places a 1 accumulation for O
+	*/
+	public void markSecond(int row, int column)
 	{
+		myBoard [row] [column] = 1;
+	}
 
-		char winner = 'N';
+	/*
+	elementMarked returns a true if the space has been taken
+	*/
+	public boolean elementMarked(int row, int column)
+	{
+		if(myBoard [row] [column] == 0) return false;
+		else return true;
+	}
+
+	/*
+	Win constructor checks if someone wins.
+	Here are the meanings of each return type
+	'None' means no winner;
+	'First' means X won;
+	'Second' means O won;
+	'Cat' means a Cat's game.
+	*/
+	public char win()
+	{
+		char winner = 'None';
 		int catCheck = 1;
 
 		// Check the columns
 		for(int column = 0; column < 3; column++)
 		{
-			int product = myBoard [0] [column] * myBoard [1] [column] * myBoard [2] [column];
-			if(product == 8000) // 20*20*20 = 8000, a win for X
+			int accumulation = myBoard [0] [column] * myBoard [1] [column] * myBoard [2] [column];
+			if(accumulation == 8) // 2*2*2 = 8, a win for X
 			{
-				winner = 'X';
+				winner = 'First';
 				break;
 			}
-			if(product == 1) // 1*1*1 = 1, a win for O
+			if(accumulation == 1) // 1*1*1 = 1, a win for O
 			{
-				winner = 'O';
+				winner = 'Second';
 				break;
 			}
 		}
 
-		if(winner != 'N') return winner;
+		if(winner != 'None') return winner;
 
 		// Check the rows
 		for(int row = 0; row < 3; row++)
 		{
-			int product = myBoard [row] [0] * myBoard [row] [1] * myBoard [row] [2];
-			if(product == 8000)
+			int accumulation = myBoard [row] [0] * myBoard [row] [1] * myBoard [row] [2];
+			if(accumulation == 8)
 			{
 				winner = 'X';
 				break;
 			}
-			if(product == 1)
+			if(accumulation == 1)
 			{
-				winner = 'O';
+				winner = 'Second';
 				break;
 			}
 		}
 
-		if(winner != 'N') return winner;
+		if(winner != 'None') return winner;
 
 		// Check one diagonal
-		int product = myBoard [0] [0] * myBoard [1] [1] * myBoard [2] [2];
-		if(product == 1) winner = 'O';
-		if(product == 8000) winner = 'X';
+		int accumulation = myBoard [0] [0] * myBoard [1] [1] * myBoard [2] [2];
+		if(accumulation == 1) winner = 'Second';
+		if(accumulation == 8) winner = 'First';
 
 		// Check the other diagonal
-		product = myBoard [0] [2] * myBoard [1] [1] * myBoard [2] [0];
-		if(product == 1) winner = 'O';
-		if(product == 8000) winner = 'X';
+		accumulation = myBoard [0] [2] * myBoard [1] [1] * myBoard [2] [0];
+		if(accumulation == 1) winner = 'Second';
+		if(accumulation == 8) winner = 'First';
 
 		// If nobody's won, Check for a cat's game
-		if(winner == 'N')
+		if(winner == 'None')
 		{
 			for(int row = 0; row < 3; row++)
 			{
@@ -103,56 +117,35 @@ public class Board {
 					catCheck *= myBoard [row] [column];
 				}
 			}
-			if(catCheck != 0) winner = 'C'; // any empty space is a zero. So product is zero if there is space left.
+			if(catCheck != 0) winner = 'Cat'; // any empty space is a zero. So product is zero if there is space left.
 		}
 
 		return winner;
 	}
 
 	/*
-	 * markX makes places a 20 on the tic tac toe board for X
-	 */
-	public void markX(int row, int column)
-	{
-		myBoard [row] [column] = 20;
-	}
-
-	/*
-	 * markO makes places a 1 on the tic tac toe board for X
-	 */
-	public void markO(int row, int column)
-	{
-		myBoard [row] [column] = 1;
-	}
-
-	/*
-	 * elementMarked returns a true if the space has been taken
-	 */
-	public boolean elementMarked(int row, int column)
-	{
-		if(myBoard [row] [column] == 0) return false;
-		else return true;
-	}
-
-	/*
-	 *  toString enables printing out of the tic tac toe board
-	 * Returns: printBoard, a string containing the current state of the board
-	 */
+	toString enables printing out of the board
+	*/
 	public String toString()
 	{
 		String printBoard = "";
 		char XorO;
-		int position = 49;
+		int position = 49;   // In ASCII, 49 stands for number 1
 
 		for(int row = 0; row < 3; row++)
 		{
-
 			for(int column = 0; column < 3; column++)
 			{
-				if(myBoard[row] [column] == 1) XorO = (char) (myBoard [row] [column] + 78); // an O
-				else if(myBoard[row] [column] == 20) XorO = (char) (myBoard [row] [column] + 68); // an X
-				else XorO = (char) (position);
-				position++;
+				if(myBoard[row] [column] == 1) 
+					XorO = (char) (myBoard [row] [column] + 78); // In ASCII, 79 stands for an O  (78+1)
+				else 
+					if(myBoard[row] [column] == 2) 
+						XorO = (char) (myBoard [row] [column] + 86); // In ASCII, 88 stands for an X  (86+2)
+					else 
+						XorO = (char) (position);
+					
+					position++;
+				
 				printBoard = printBoard + XorO + " ";
 			}
 			printBoard = printBoard + "\n" ; // starts a new line at the end of a row
