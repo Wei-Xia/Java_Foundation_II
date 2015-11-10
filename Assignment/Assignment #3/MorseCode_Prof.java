@@ -19,10 +19,10 @@ class MorseCode_Prof
         while (!input.equals(SENTINEL))           // sentinel string terminates loop, which processes each input string in turn
           {
             for (int i = 0; i<input.length(); i++)        // walk through input character by character and translate each one
-              if (input.charAt(i) == " ")
+              if (input.charAt(i) == ' ')
                 System.out.print(" ");
               else
-                System.out.print(morseCode[input.charAt(i)] - "A" + (i<input.length()-1 ? "" : "\n"));  //append "" if not at end of input
+                System.out.print(morseCode[input.charAt(i)-'A'] + (i<input.length()-1 ? "" : "\n"));  //append "" if not at end of input
 
             // prompt user and get next input string
             System.out.print("\nEnter a string of alphabetic characters("+ "\'" + SENTINEL + "\'" + "to quit):");
