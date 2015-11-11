@@ -14,7 +14,7 @@ class AssignmentFourTwo
 		    {
 				break;	// quit the program when user enter an empty string
 		    }
-       		
+
        		else
 		    {
             	HashMap<String, Integer> myWordsCount = new HashMap<String, Integer>();
@@ -27,7 +27,7 @@ class AssignmentFourTwo
                     	myWordsCount.put(s, 1);
               		}
 
-//             	System.out.println(myWordsCount.getValue(s));     
+//             	System.out.println(myWordsCount.getValue(s));
             		// Output the all HashMap to check it is correct
 
     			Iterator iterator = myWordsCount.keySet().iterator();
