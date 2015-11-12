@@ -52,9 +52,9 @@ public class Board {
 	Win constructor checks if someone wins.
 	Here are the meanings of each return type
 	'N' means no winner;
-	'First' means X won;
-	'Second' means O won;
-	'Cat' means a Cat's game.
+	'X' means X won;
+	'O' means O won;
+	'C' means a C's game.
 	*/
 	public char win()
 	{
@@ -67,12 +67,12 @@ public class Board {
 			int accumulation = myBoard [0] [column] * myBoard [1] [column] * myBoard [2] [column];
 			if(accumulation == 8) // 2*2*2 = 8, a win for X
 			{
-				winner = 'First';
+				winner = 'X';
 				break;
 			}
 			if(accumulation == 1) // 1*1*1 = 1, a win for O
 			{
-				winner = 'Second';
+				winner = 'O';
 				break;
 			}
 		}
@@ -90,7 +90,7 @@ public class Board {
 			}
 			if(accumulation == 1)
 			{
-				winner = 'Second';
+				winner = 'O';
 				break;
 			}
 		}
@@ -99,13 +99,13 @@ public class Board {
 
 		// Check one diagonal
 		int accumulation = myBoard [0] [0] * myBoard [1] [1] * myBoard [2] [2];
-		if(accumulation == 1) winner = 'Second';
-		if(accumulation == 8) winner = 'First';
+		if(accumulation == 1) winner = 'O';
+		if(accumulation == 8) winner = 'X';
 
 		// Check the other diagonal
 		accumulation = myBoard [0] [2] * myBoard [1] [1] * myBoard [2] [0];
-		if(accumulation == 1) winner = 'Second';
-		if(accumulation == 8) winner = 'First';
+		if(accumulation == 1) winner = 'O';
+		if(accumulation == 8) winner = 'X';
 
 		// If nobody's won, Check for a cat's game
 		if(winner == 'N')
@@ -117,7 +117,7 @@ public class Board {
 					catCheck *= myBoard [row] [column];
 				}
 			}
-			if(catCheck != 0) winner = 'Cat'; // any empty space is a zero. So product is zero if there is space left.
+			if(catCheck != 0) winner = 'C'; // any empty space is a zero. So product is zero if there is space left.
 		}
 
 		return winner;

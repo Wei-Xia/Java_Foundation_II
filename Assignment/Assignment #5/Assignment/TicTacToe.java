@@ -34,7 +34,7 @@ public class TicTacToe
 
 				winner = Game.win(); // Check if win
 
-				if(winner != 'None')
+				if(winner != 'N')
 					break;
 				System.out.println(Game);
 
@@ -56,7 +56,7 @@ public class TicTacToe
 
 			winner = Game.win();	// Check if win
 
-			if( winner != 'None')
+			if( winner != 'N')
 				break;
 			System.out.println(Game);
 
@@ -65,10 +65,10 @@ public class TicTacToe
 
 		System.out.println(Game);
 
-		if(winner == 'Cat')
+		if(winner == 'C')
 			System.out.println("This is a cat's game.");
 
-		if(winner != 'Cat')
+		if(winner != 'C')
 			System.out.println("The winner is: " + winner);
 
 	}
