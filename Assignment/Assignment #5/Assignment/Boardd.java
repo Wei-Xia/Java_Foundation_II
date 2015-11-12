@@ -1,19 +1,4 @@
-/*
- * Created on May 12, 2004
- * by Jake Scruggs
- *
- * TheBoard is a tic tac toe board which represents it in a 2D array
- * It can make a copy of itself.
- * Check for a win or a Cat's game.
- * Check if a space is occupied.
- * Mark an X or an O (X is a 20 in the array and O is a 1.  An empty space is a 0.)
- * And create a text version of itself.
- *
- */
-
-
-
-public class Board {
+public class Boardd {
 
 	private int [] [] myBoard = new int [3] [3];
 

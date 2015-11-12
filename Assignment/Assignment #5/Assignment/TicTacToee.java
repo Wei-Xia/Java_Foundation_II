@@ -1,6 +1,6 @@
 import java.io.*;
 
-public class TicTacToe {
+public class TicTacToee {
 
 	public static void main(String[] args)
 	{
