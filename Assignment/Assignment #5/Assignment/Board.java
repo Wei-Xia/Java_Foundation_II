@@ -8,7 +8,7 @@ It can also mark an X or O from the player's choice.
 public class Board {
 
 	private int [][] myBoard = new int [3][3];
-
+	
 	/*
 	 Create a 3 by 3 array and use for a tic tac toe board.
 	*/
@@ -51,14 +51,14 @@ public class Board {
 	/*
 	Win constructor checks if someone wins.
 	Here are the meanings of each return type
-	'None' means no winner;
+	'N' means no winner;
 	'First' means X won;
 	'Second' means O won;
 	'Cat' means a Cat's game.
 	*/
 	public char win()
 	{
-		char winner = 'None';
+		char winner = 'N';
 		int catCheck = 1;
 
 		// Check the columns
@@ -77,7 +77,7 @@ public class Board {
 			}
 		}
 
-		if(winner != 'None') return winner;
+		if(winner != 'N') return winner;
 
 		// Check the rows
 		for(int row = 0; row < 3; row++)
@@ -95,7 +95,7 @@ public class Board {
 			}
 		}
 
-		if(winner != 'None') return winner;
+		if(winner != 'N') return winner;
 
 		// Check one diagonal
 		int accumulation = myBoard [0] [0] * myBoard [1] [1] * myBoard [2] [2];
@@ -108,7 +108,7 @@ public class Board {
 		if(accumulation == 8) winner = 'First';
 
 		// If nobody's won, Check for a cat's game
-		if(winner == 'None')
+		if(winner == 'N')
 		{
 			for(int row = 0; row < 3; row++)
 			{
