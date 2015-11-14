@@ -41,7 +41,6 @@ public class CorpSales
               totalSales += sales[div][qtr];
           }
       }
-
       // Display the total sales
       System.out.printf("Total company sales: $%,.2f\n", totalSales);
   }
