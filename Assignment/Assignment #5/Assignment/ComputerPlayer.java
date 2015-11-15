@@ -7,39 +7,36 @@ class ComputerPlayer
 {
 	public static int [] makeMove(int theBoard [] [], int turn)
 	{
-		int [] analysisAndMove = new int [3];
 		int square = 5;
 		int choice [] = new int [2];
-		boolean moveMade = false;
-
 
 		if(turn==1) // first move is to get 5
-			{
+		{
 			square = 5;
 			choice = squareConvert(square);
 			return choice;
 			}
 
-		choice = randomMove(theBoard); // if no custom move, offense, or defense, the make a random move.
+		choice = randomMove(theBoard); // make a random move.
 		return choice;
-			}
+		}
 
 
 
 	public static int [] randomMove(int theBoard [] [] )
 	{
 		int choice [] = new int [2];
-		int possibleRow;
-		int possibleColumn;
+		int randomRow;
+		int randomCol;
 
 		while(true)
 		{
-			possibleRow = (int) (Math.random()*3 );
-			possibleColumn = (int) (Math.random()*3 );
-			if(theBoard [possibleRow] [possibleColumn] == 0) break;
+			randomRow = (int) (Math.random()*3 );
+			randomCol = (int) (Math.random()*3 );
+			if(theBoard [randomRow] [randomCol] == 0) break;
 		}
-		choice [0] = possibleRow;
-		choice [1] = possibleColumn;
+		choice [0] = randomRow;
+		choice [1] = randomCol;
 
 		return choice;
 	}
