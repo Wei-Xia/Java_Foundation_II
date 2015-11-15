@@ -9,6 +9,41 @@ public class TicTacToe
 
 		Board Game = new Board();
 
+
+		System.out.print("Enter 1 to play with computer; \nEnter 2 to play with other people.\nPlease enter 1-2: " );
+
+		int players =1;
+		String input = "";
+		boolean badInput = false;
+
+		do // get the number of players -- only accept 1 or 2
+		{
+			try
+			{
+				input = theKeyboard.readLine();
+			}
+			catch(IOException e)
+			{
+				System.out.println("input error:" + e);
+				System.exit(1);
+			}
+			if(input.equals("1"))
+			{
+				badInput = false;
+				players = 1;
+			}
+			else if(input.equals("2"))
+			{
+				badInput = false;
+				players = 2;
+			}
+			else badInput = true;
+
+			if(badInput) System.out.print("Enter a number, 1 or 2: ");
+		}
+		while(badInput);
+
+
 		System.out.println("TicTacToe Game starts. Please enter 1-9 to make your choice.");
 
 		int [] move = new int [2];
@@ -22,13 +57,23 @@ public class TicTacToe
 			// Player X's turn
 			if(getTurn%2 != 0)
 			{
-				System.out.print("Player X: Enter 1-9 to make choice!");
-				while(true)
-				{
-					move = getMove();
-					if(!Game.elementMarked(move[0], move[1])) break; // can't take occupied space
-					System.out.println("That space is occupied.");
+				if (players == 2) {
+
+					System.out.print("Player X, Enter 1-9 to make choice: ");
+					while(true)
+					{
+						move = getMove();
+						if(!Game.elementMarked(move[0], move[1])) break; // can't take occupied space
+						System.out.println("That space is occupied.");
+					}
+
 				}
+
+				else // Or computer player
+				{
+					move = ComputerPlayer.makeMove(Game.copyBoard(), getTurn);
+				}
+
 
 				Game.markFirst(move[0], move[1]); // mark an X on the board
 
@@ -42,7 +87,7 @@ public class TicTacToe
 			}
 
 			// Player O's turn
-			System.out.print("Player O: Enter 1-9 to make choice!");
+			System.out.print("Player O, Enter 1-9 to make choice: ");
 
 			while(true)
 			{
