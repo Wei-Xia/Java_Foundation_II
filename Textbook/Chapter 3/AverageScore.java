@@ -33,7 +33,7 @@ public class AverageScore
       JOptionPane.showMessageDialog(null, "The average is " + average);
 
       // If the score was greater than 95, let the user know that's a great score
-      if (average>95)
+      if (average>94)
         JOptionPane.showMessageDialog(null, "That's a great score!");
 
       System.exit(0);
