@@ -5,13 +5,11 @@ It can check if a square has been chosen.
 It can also mark an X or O from the player's choice.
 */
 
-public class Board {
-
+class Board 
+{
 	private int [][] myBoard = new int [3][3];
-
-	/*
-	 Create a 3 by 3 array and use for a tic tac toe board.
-	*/
+	
+// 	Create a 3 by 3 array and use for a tic tac toe board.
 	public Board()
 	{
 		for(int row = 0; row < 3; row++)
@@ -122,7 +120,8 @@ public class Board {
 					catCheck *= myBoard [row] [column];
 				}
 			}
-			if(catCheck != 0) winner = 'C'; // any empty space is a zero. So product is zero if there is space left.
+			// any empty space is a zero. So product is zero if there is space left.
+			if(catCheck != 0) winner = 'C'; 
 		}
 
 		return winner;
@@ -142,10 +141,12 @@ public class Board {
 			for(int column = 0; column < 3; column++)
 			{
 				if(myBoard[row] [column] == 1)
-					XorO = (char) (myBoard [row] [column] + 78); // In ASCII, 79 stands for an O  (78+1)
+					// In ASCII, 79 stands for an O  (78+1)
+					XorO = (char) (myBoard [row] [column] + 78); 
 				else
 					if(myBoard[row] [column] == 2)
-						XorO = (char) (myBoard [row] [column] + 86); // In ASCII, 88 stands for an X  (86+2)
+						// In ASCII, 88 stands for an X  (86+2)
+						XorO = (char) (myBoard [row] [column] + 86); 
 					else
 						XorO = (char) (position);
 
