@@ -1,6 +1,6 @@
 import java.io.*;
 
-public class TicTacToe
+class TicTacToe
 {
 	public static void main(String[] args)
 	{
@@ -10,7 +10,8 @@ public class TicTacToe
 		Board Game = new Board();
 
 
-		System.out.print("Enter 1 to play with computer; \nEnter 2 to play with other people.\nPlease enter 1-2: " );
+		System.out.print("Enter 1 to play with computer;" +
+						 "\nEnter 2 to play with other people.\nPlease enter 1-2: " );
 
 		int players =1;
 		String input = "";
@@ -44,7 +45,8 @@ public class TicTacToe
 		while(badInput);
 
 
-		System.out.println("TicTacToe Game starts. Please enter 1-9 to make your choice.");
+		System.out.println("TicTacToe Game starts."+ 
+						   " Please enter 1-9 to make your choice.");
 
 		int [] move = new int [2];
 		char winner;
@@ -63,7 +65,8 @@ public class TicTacToe
 					while(true)
 					{
 						move = getMove();
-						if(!Game.elementMarked(move[0], move[1])) break; // can't take occupied space
+						// can't take occupied space
+						if(!Game.elementMarked(move[0], move[1])) break; 
 						System.out.println("That space is occupied.");
 					}
 
@@ -94,7 +97,8 @@ public class TicTacToe
 				move = getMove();
 				if(!Game.elementMarked(move[0], move[1]))
 					break;
-				System.out.println("This square has been chosen. Please enter a new square.");
+				System.out.println("This square has been chosen." +  
+								   " Please enter a new square.");
 			}
 
 			Game.markSecond(move[0], move[1]);
