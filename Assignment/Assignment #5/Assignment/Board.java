@@ -8,7 +8,7 @@ It can also mark an X or O from the player's choice.
 public class Board {
 
 	private int [][] myBoard = new int [3][3];
-	
+
 	/*
 	 Create a 3 by 3 array and use for a tic tac toe board.
 	*/
@@ -22,7 +22,12 @@ public class Board {
 			}
 		}
 	}
-	
+
+	public int [] [] copyBoard()
+	{
+		return myBoard;
+	}
+
 	/*
 	markFirst makes places a 2 accumulation for X
 	*/
@@ -136,16 +141,16 @@ public class Board {
 		{
 			for(int column = 0; column < 3; column++)
 			{
-				if(myBoard[row] [column] == 1) 
+				if(myBoard[row] [column] == 1)
 					XorO = (char) (myBoard [row] [column] + 78); // In ASCII, 79 stands for an O  (78+1)
-				else 
-					if(myBoard[row] [column] == 2) 
+				else
+					if(myBoard[row] [column] == 2)
 						XorO = (char) (myBoard [row] [column] + 86); // In ASCII, 88 stands for an X  (86+2)
-					else 
+					else
 						XorO = (char) (position);
-					
+
 					position++;
-				
+
 				printBoard = printBoard + XorO + " ";
 			}
 			printBoard = printBoard + "\n" ; // starts a new line at the end of a row
