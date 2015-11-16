@@ -61,7 +61,6 @@ class TicTacToe
 			{
 				if (players == 2)
 				{
-
 					System.out.print("Player X, Enter 1-9 to make choice: ");
 					while(true)
 					{
@@ -70,7 +69,6 @@ class TicTacToe
 						if(!Game.elementMarked(move[0], move[1])) break;
 						System.out.println("That space is occupied.");
 					}
-
 				}
 
 				else // Or computer player
@@ -88,6 +86,17 @@ class TicTacToe
 
 				getTurn++;    //return turn to the other player
 			}
+
+			for (int i=1; i<10; i++)
+			{
+				move = i;
+				move = getMove();
+				winner = Game.win();	// Check if win
+				if( winner != 'N')
+					break;
+				System.out.println(Game);
+			}
+
 
 			// Player O's turn
 			System.out.print("Player O, Enter 1-9 to make choice: ");
