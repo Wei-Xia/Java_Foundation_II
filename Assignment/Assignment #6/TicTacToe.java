@@ -16,7 +16,7 @@ class TicTacToe
 		String input = "";
 		boolean badInput = false;
 
-		do // get the number of players -- only accept 1 or 2
+		do 							// get the number of players -- only accept 1 or 2
 		{
 			try
 			{
@@ -51,9 +51,7 @@ class TicTacToe
 
 		int [] move = new int [2];
 		char winner;
-		int getTurn = 1;		  // The initialization of turns
-
-		System.out.println(Game); // print the board for first time
+		int getTurn = 1;		 						 // The initialization of turns
 
 		while(true) 			  // loop only breaks when X or O wins, or a cat's game
 		{
@@ -72,18 +70,18 @@ class TicTacToe
 					}
 				}
 
-				else // Or computer player
+				else											 // Or computer player
 					move = ComputerPlayer.makeMove(Game.copyBoard(), getTurn);
 
-				Game.markFirst(move[0], move[1]); // mark an X on the board
+				Game.markFirst(move[0], move[1]); 				// mark an X on the board
 
-				winner = Game.win(); // Check if win
+				winner = Game.win(); 									// Check if win
 
 				if(winner != 'N')
 					break;
 				System.out.println(Game);
 
-				getTurn++;    //return turn to the other player
+				getTurn++;    							//return turn to the other player
 			}
 
 			// Player O's turn
@@ -100,13 +98,13 @@ class TicTacToe
 
 			Game.markSecond(move[0], move[1]);
 
-			winner = Game.win();	// Check if win
+			winner = Game.win();										// Check if win
 
 			if(winner != 'N')
 				break;
 			System.out.println(Game);
 
-			getTurn++;    //return turn to the other player
+			getTurn++;    								//return turn to the other player
 		}
 
 		System.out.println(Game);
@@ -119,7 +117,7 @@ class TicTacToe
 
 	}
 
-// getMove gets the users choice and translates it into rows and columns
+	// getMove gets the users choice and translates it into rows and columns
 	public static int[] getMove()
 	{
 		new InputStreamReader(System.in);
@@ -170,7 +168,7 @@ class Board
 {
 	private int [][] myBoard = new int [3][3];
 
-// 	Create a 3 by 3 array and use for a tic tac toe board.
+	// 	Create a 3 by 3 array and use for a tic tac toe board.
 	public Board()
 	{
 		for(int row = 0; row < 3; row++)
@@ -187,25 +185,20 @@ class Board
 		return myBoard;
 	}
 
-	/*
-	markFirst makes places a 2 accumulation for X
-	*/
+	//markFirst makes places a 2 accumulation for X
 	public void markFirst(int row, int column)
 	{
 		myBoard [row] [column] = 2;
 	}
 
-	/*
-	markSecond makes places a 1 accumulation for O
-	*/
+
+	//markSecond makes places a 1 accumulation for O
 	public void markSecond(int row, int column)
 	{
 		myBoard [row] [column] = 1;
 	}
 
-	/*
-	elementMarked returns a true if the space has been taken
-	*/
+	//elementMarked returns a true if the space has been taken
 	public boolean elementMarked(int row, int column)
 	{
 		if(myBoard [row] [column] == 0) return false;
@@ -232,12 +225,12 @@ class Board
 							   * myBoard [1] [column]
 							   * myBoard [2] [column];
 
-			if(accumulation == 8) // 2*2*2 = 8, a win for X
+			if(accumulation == 8) 							// 2*2*2 = 8, a win for X
 			{
 				winner = 'X';
 				break;
 			}
-			if(accumulation == 1) // 1*1*1 = 1, a win for O
+			if(accumulation == 1) 							// 1*1*1 = 1, a win for O
 			{
 				winner = 'O';
 				break;
@@ -292,14 +285,13 @@ class Board
 		return winner;
 	}
 
-	/*
-	toString enables printing out of the board
-	*/
+
+	//toString enables printing out of the board
 	public String toString()
 	{
 		String printBoard = "";
 		char XorO;
-		int position = 49;   // In ASCII, 49 stands for number 1
+		int position = 49;   						// In ASCII, 49 stands for number 1
 
 		for(int row = 0; row < 3; row++)
 		{
@@ -319,7 +311,7 @@ class Board
 
 				printBoard = printBoard + XorO + " ";
 			}
-			printBoard = printBoard + "\n" ; // starts a new line at the end of a row
+			printBoard = printBoard + "\n" ; 	// starts a new line at the end of a row
 		}
 		return printBoard;
 	}
@@ -338,14 +330,14 @@ class ComputerPlayer
 		int square = 5;
 		int move [] = new int [2];
 
-		if(turn==1) // first move is to get 5
+		if(turn==1) 										// first move is to get 5
 		{
 			square = 5;
 			move = Convert(square);
 			return move;
 		}
 
-		move = randomMove(board); // make a random move.
+		move = randomMove(board); 								// make a random move
 		return move;
 	}
 
@@ -368,7 +360,7 @@ class ComputerPlayer
 		return move;
 	}
 
-// 	Convert will convert square (1-9) into a row and column
+	//Convert will convert square (1-9) into a row and column
 	public static int [] Convert(int square)
 	{
 		int move [] = new int [2];
