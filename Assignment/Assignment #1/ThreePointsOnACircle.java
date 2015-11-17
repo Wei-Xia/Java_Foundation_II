@@ -29,5 +29,5 @@ class ThreePointsOnACircle
 				else
 					System.out.println("\n\nk does not lie on the arc from j to i when moving clockwise on a circle of size n.");
 
-			}
-	}
+			}				// End main
+	}						// End class ThreePointsOnACircle
