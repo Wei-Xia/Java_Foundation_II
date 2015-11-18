@@ -83,7 +83,7 @@ class TicTacToe
 
 				getTurn++;    							//return turn to the other player
 			}
-
+			
 			// Player O's turn
 			System.out.print("Player O, Enter 1-9 to make choice: ");
 
