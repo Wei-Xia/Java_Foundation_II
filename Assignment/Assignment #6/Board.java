@@ -59,7 +59,7 @@ class Board
 	'O' means O won;
 	'C' means a C's game.
 	*/
-	public char win()
+public char win()
 	{
 		char winner = 'N';
 		int catCheck = 1;
