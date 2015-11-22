@@ -80,5 +80,4 @@ public class Grader
     // Return the adjusted average
     return average;
   }
-
 }
