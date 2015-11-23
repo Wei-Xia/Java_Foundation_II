@@ -13,10 +13,11 @@ class TicTacToe
 						 "\nEnter 2 to play with other people.\nPlease enter 1-2: " );
 
 		final int BOARD_SIZE = 4;			// Tic-Tac-Toe board is BOARD_SIZE*BOARD_SIZE
+		final int DOUBLE_SIZE = BOARD_SIZE * BOARD_SIZE;		// The square of the size, in order to count the total number of cells/squares
 
-		int players =1;
+		int players =1;				// The identifier for how many players
 		String input = "";
-		boolean badInput = false;
+		boolean badInput = false;			// Boolean in case user enters the other numbers not 1 or 2
 
 		do 							// get the number of players -- only accept 1 or 2
 		{
@@ -51,8 +52,8 @@ class TicTacToe
 		System.out.println("TicTacToe Game starts."+
 						   " Please enter 1-9 to make your choice.");
 
-		int [] move = new int [2];
-		char winner;
+		int [] move = new int [2];		// Turn one move into two dimensions
+		char winner;						// The identifier for winner
 		int getTurn = 1;		 						 // The initialization of turns
 
 		while(true) 			  // loop only breaks when X or O wins, or a cat's game
@@ -119,13 +120,13 @@ class TicTacToe
 		if(winner == 'C')
 			System.out.println("This is a cat's game.");
 
-		if(winner != 'C')
+		else
 			System.out.println("The winner is: " + winner);
 
 	}
 
 	// getMove gets the users choice and translates it into rows and columns
-	public static int[] getMove()
+	static int[] getMove()
 	{
 		new InputStreamReader(System.in);
 		BufferedReader theKeyboard = new BufferedReader(new InputStreamReader(System.in));
@@ -134,7 +135,8 @@ class TicTacToe
 		int [] move = new int[2];
 		boolean errorInput = false;
 
-		int power = (int)Math.pow(4,2);
+		final int BOARD_SIZE = 4;			// Tic-Tac-Toe board is BOARD_SIZE*BOARD_SIZE
+		final int DOUBLE_SIZE = BOARD_SIZE * BOARD_SIZE;
 
 		do
 		{
@@ -147,26 +149,29 @@ class TicTacToe
 				System.out.println("input error:" + e);
 				System.exit(1);
 			}
-				 if(input.equals("1")) {move [0] = 0; move[1] = 0; errorInput = false;}
-			else if(input.equals("2")) {move [0] = 0; move[1] = 1; errorInput = false;}
-			else if(input.equals("3")) {move [0] = 0; move[1] = 2; errorInput = false;}
-			else if(input.equals("4")) {move [0] = 0; move[1] = 3; errorInput = false;}
-			else if(input.equals("5")) {move [0] = 1; move[1] = 0; errorInput = false;}
-			else if(input.equals("6")) {move [0] = 1; move[1] = 1; errorInput = false;}
-			else if(input.equals("7")) {move [0] = 1; move[1] = 2; errorInput = false;}
-			else if(input.equals("8")) {move [0] = 1; move[1] = 3; errorInput = false;}
-			else if(input.equals("9")) {move [0] = 2; move[1] = 0; errorInput = false;}
-			else if(input.equals("10")) {move [0] = 2; move[1] = 1; errorInput = false;}
-			else if(input.equals("11")) {move [0] = 2; move[1] = 2; errorInput = false;}
-			else if(input.equals("12")) {move [0] = 2; move[1] = 3; errorInput = false;}
-			else if(input.equals("13")) {move [0] = 3; move[1] = 0; errorInput = false;}
-			else if(input.equals("14")) {move [0] = 3; move[1] = 1; errorInput = false;}
-			else if(input.equals("15")) {move [0] = 3; move[1] = 2; errorInput = false;}
-			else if(input.equals("16")) {move [0] = 3; move[1] = 3; errorInput = false;}
+
+			errorInput = false;
+
+				 if(input.equals("1")) {move [0] = 0; move[1] = 0;}
+			else if(input.equals("2")) {move [0] = 0; move[1] = 1;}
+			else if(input.equals("3")) {move [0] = 0; move[1] = 2;}
+			else if(input.equals("4")) {move [0] = 0; move[1] = 3;}
+			else if(input.equals("5")) {move [0] = 1; move[1] = 0;}
+			else if(input.equals("6")) {move [0] = 1; move[1] = 1;}
+			else if(input.equals("7")) {move [0] = 1; move[1] = 2;}
+			else if(input.equals("8")) {move [0] = 1; move[1] = 3;}
+			else if(input.equals("9")) {move [0] = 2; move[1] = 0;}
+			else if(input.equals("10")) {move [0] = 2; move[1] = 1;}
+			else if(input.equals("11")) {move [0] = 2; move[1] = 2;}
+			else if(input.equals("12")) {move [0] = 2; move[1] = 3;}
+			else if(input.equals("13")) {move [0] = 3; move[1] = 0;}
+			else if(input.equals("14")) {move [0] = 3; move[1] = 1;}
+			else if(input.equals("15")) {move [0] = 3; move[1] = 2;}
+			else if(input.equals("16")) {move [0] = 3; move[1] = 3;}
 			else errorInput = true;
 
 			if(errorInput)
-				System.out.print("Error input. Enter a number within 1-"+ power + ": ");
+				System.out.print("Error input. Enter a number within 1-"+ DOUBLE_SIZE + ": ");
 		}
 		while(errorInput);
 
@@ -186,18 +191,14 @@ class Board
 
 	final int BOARD_SIZE = 4;			// Tic-Tac-Toe board is BOARD_SIZE*BOARD_SIZE
 
-	private int [][] myBoard = new int [BOARD_SIZE][BOARD_SIZE];
+	int [][] myBoard = new int [BOARD_SIZE][BOARD_SIZE];
 
 	// 	Create a 3 by 3 array and use for a tic tac toe board.
 	Board()
 	{
 		for(int row = 0; row < BOARD_SIZE; row++)
-		{
 			for(int column = 0; column < BOARD_SIZE; column++)
-			{
 				myBoard [row] [column] = 0;
-			}
-		}
 	}
 
 	int [] [] copyBoard()
@@ -222,7 +223,8 @@ class Board
 	boolean elementMarked(int row, int column)
 	{
 		if(myBoard [row] [column] == 0) return false;
-		else return true;
+
+		return true;
 	}
 
 	/*
@@ -250,7 +252,7 @@ class Board
 				winner = 'X';
 				break;
 			}
-			if(accumulation == 1) 							// 1*1*1 = 1, a win for O
+			else if(accumulation == 1) 							// 1*1*1 = 1, a win for O
 			{
 				winner = 'O';
 				break;
@@ -269,7 +271,7 @@ class Board
 				winner = 'X';
 				break;
 			}
-			if(accumulation == 1)
+			else if(accumulation == 1)
 			{
 				winner = 'O';
 				break;
@@ -292,12 +294,8 @@ class Board
 		if(winner == 'N')
 		{
 			for(int row = 0; row < BOARD_SIZE; row++)
-			{
 				for(int column = 0; column < BOARD_SIZE; column++)
-				{
 					catCheck *= myBoard [row] [column];
-				}
-			}
 			// any empty space is a zero. So product is zero if there is space left.
 			if(catCheck != 0) winner = 'C';
 		}
@@ -311,7 +309,10 @@ class Board
     int catCheck = 1;
     char [] result=new char[2];
 
-		for(int i=1; i<10; i++)
+		final int BOARD_SIZE = 4;			// Tic-Tac-Toe board is BOARD_SIZE*BOARD_SIZE
+		final int DOUBLE_SIZE = BOARD_SIZE * BOARD_SIZE;
+
+		for(int i=1; i<(DOUBLE_SIZE+1); i++)
 		{
 			winner = 'N';
       //Places an X if a cell is not occupied
@@ -321,7 +322,7 @@ class Board
         continue;
 
       // Check the columns
-      for (int column = 0; column < 3; column++)
+      for (int column = 0; column < BOARD_SIZE; column++)
 			{
           int accumulation = myBoard[0][column] *
 														 myBoard[1][column] * myBoard[2][column];
@@ -331,7 +332,7 @@ class Board
               winner = 'X';
               break;
           }
-          if (accumulation == 1) // 1*1*1 = 1, a win for O
+          else if (accumulation == 1) // 1*1*1 = 1, a win for O
           {
               winner = 'O';
               break;
@@ -348,7 +349,7 @@ class Board
     	}
 
     	// Check the rows
-    	for (int row = 0; row < 3; row++)
+    	for (int row = 0; row < BOARD_SIZE; row++)
 			{
     		int accumulation = myBoard[row][0] * myBoard[row][1] * myBoard[row][2];
 
@@ -357,7 +358,7 @@ class Board
       		winner = 'X';
         	break;
       	}
-      	if (accumulation == 1)
+      	else if (accumulation == 1)
 				{
         	winner = 'O';
         	break;
@@ -377,7 +378,7 @@ class Board
     	int accumulation = myBoard[0][0] * myBoard[1][1] * myBoard[2][2];
     	if (accumulation == 1)
     		winner = 'O';
-    	if (accumulation == 8)
+    	else if (accumulation == 8)
 			{
       	winner = 'X';
     		result[0] = winner; //assume the winner
@@ -391,7 +392,7 @@ class Board
     	accumulation = myBoard[0][2] * myBoard[1][1] * myBoard[2][0];
     	if (accumulation == 1)
     		winner = 'O';
-    	if (accumulation == 8)
+    	else if (accumulation == 8)
 			{
       	winner = 'X';
       	result[0] = winner; //assume the winner
@@ -460,23 +461,16 @@ class Board
 
 class ComputerPlayer
 {
-	public static int [] makeMove(int board [] [], int turn)
+	static int [] makeMove(int board [] [], int turn)
 	{
 		int square = 5;
 		int move [] = new int [2];
-
-		if(turn==1) 										// first move is to get 5
-		{
-			square = 5;
-			move = Convert(square);
-			return move;
-		}
 
 		move = randomMove(board); 								// make a random move
 		return move;
 	}
 
-	public static int [] randomMove(int board [] [] )
+	static int [] randomMove(int board [] [] )
 	{
 		int move [] = new int [2];
 		int randomRow;
@@ -496,19 +490,26 @@ class ComputerPlayer
 	}
 
 	//Convert will convert square (1-9) into a row and column
-	public static int [] Convert(int square)
+	static int [] Convert(int square)
 	{
 		int move [] = new int [2];
 
-			 if(square == 1) {move [0] = 0; move[1] = 0;}
-		else if(square == 2) {move [0] = 0; move[1] = 1;}
-		else if(square == 3) {move [0] = 0; move[1] = 2;}
-		else if(square == 4) {move [0] = 1; move[1] = 0;}
-		else if(square == 5) {move [0] = 1; move[1] = 1;}
-		else if(square == 6) {move [0] = 1; move[1] = 2;}
-		else if(square == 7) {move [0] = 2; move[1] = 0;}
-		else if(square == 8) {move [0] = 2; move[1] = 1;}
-		else if(square == 9) {move [0] = 2; move[1] = 2;}
+				 if(square == 1) {move [0] = 0; move[1] = 0;}
+ 		else if(square == 2) {move [0] = 0; move[1] = 1;}
+ 		else if(square == 3) {move [0] = 0; move[1] = 2;}
+ 		else if(square == 4) {move [0] = 0; move[1] = 3;}
+ 		else if(square == 5) {move [0] = 1; move[1] = 0;}
+ 		else if(square == 6) {move [0] = 1; move[1] = 1;}
+ 		else if(square == 7) {move [0] = 1; move[1] = 2;}
+ 		else if(square == 8) {move [0] = 1; move[1] = 3;}
+ 		else if(square == 9) {move [0] = 2; move[1] = 0;}
+ 		else if(square == 10) {move [0] = 2; move[1] = 1;}
+ 		else if(square == 11) {move [0] = 2; move[1] = 2;}
+ 		else if(square == 12) {move [0] = 2; move[1] = 3;}
+ 		else if(square == 13) {move [0] = 3; move[1] = 0;}
+ 		else if(square == 14) {move [0] = 3; move[1] = 1;}
+ 		else if(square == 15) {move [0] = 3; move[1] = 2;}
+ 		else if(square == 16) {move [0] = 3; move[1] = 3;}
 
 		return move;
 	}
