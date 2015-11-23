@@ -67,7 +67,8 @@ class TicTacToe
 					{
 						move = getMove();
 						// can't take occupied space
-						if(!Game.elementMarked(move[0], move[1])) break;
+						if(!Game.elementMarked(move[0], move[1]))
+							break;
 						System.out.println("That space is occupied.");
 					}
 				}
@@ -188,7 +189,7 @@ class Board
 	private int [][] myBoard = new int [BOARD_SIZE][BOARD_SIZE];
 
 	// 	Create a 3 by 3 array and use for a tic tac toe board.
-	public Board()
+	Board()
 	{
 		for(int row = 0; row < BOARD_SIZE; row++)
 		{
@@ -199,26 +200,26 @@ class Board
 		}
 	}
 
-	public int [] [] copyBoard()
+	int [] [] copyBoard()
 	{
 		return myBoard;
 	}
 
 	//markFirst makes places a 2 accumulation for X
-	public void markFirst(int row, int column)
+	void markFirst(int row, int column)
 	{
 		myBoard [row] [column] = 2;
 	}
 
 
 	//markSecond makes places a 1 accumulation for O
-	public void markSecond(int row, int column)
+	void markSecond(int row, int column)
 	{
 		myBoard [row] [column] = 1;
 	}
 
 	//elementMarked returns a true if the space has been taken
-	public boolean elementMarked(int row, int column)
+	boolean elementMarked(int row, int column)
 	{
 		if(myBoard [row] [column] == 0) return false;
 		else return true;
@@ -232,7 +233,7 @@ class Board
 	'O' means O won;
 	'C' means a C's game.
 	*/
-	public char win()
+	char win()
 	{
 		char winner = 'N';
 		int catCheck = 1;
