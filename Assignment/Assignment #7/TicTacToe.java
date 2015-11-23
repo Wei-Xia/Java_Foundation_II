@@ -75,7 +75,10 @@ class TicTacToe
 				}
 
 				else											 // Or computer player
+				{
+					System.out.print("This is Computer Player's move.\n");
 					move = ComputerPlayer.makeMove(Game.copyBoard(), getTurn);
+				}
 
 				Game.markFirst(move[0], move[1]); 				// mark an X on the board
 
