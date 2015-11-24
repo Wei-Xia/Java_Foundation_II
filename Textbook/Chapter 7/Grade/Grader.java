@@ -24,7 +24,7 @@ public class Grader
    @return The lowest test score.
   */
 
-  public class getLowestScore()
+  public double getLowestScore()
   {
     double lowest;      // To hold the lowest score
 
@@ -68,7 +68,7 @@ public class Grader
         total += score;
 
       // Next, get the lowest score.
-      lowest = getLowest();
+      lowest = getLowestScore();
 
       // Subtract the lowest score from the total.
       total -= lowest;
