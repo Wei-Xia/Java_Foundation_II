@@ -22,6 +22,6 @@ public class ArrayListDemo1
 
       // Now display the items in nameList
       for (int i = 0 ; i<nameList.size(); i++)
-        System.out.println(nameList.get(index));
+        System.out.println(nameList.get(i));
   }
 }
