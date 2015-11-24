@@ -22,7 +22,7 @@ public class CalcAverage
       double[] scores = new double[numScores];
 
       // Get the test scores and store them in the scores array.
-      for (int i = 0; i<numScores.length; i++)
+      for (int i = 0; i<numScores; i++)
       {
           System.out.print("Enter score #" + (i+1) + ": ");
           scores[i] = keyboard.nextInt();
@@ -35,6 +35,6 @@ public class CalcAverage
       System.out.println("Your adjusted average is " + myGrader.getAverage());
 
       // Display the lowest score.
-      System.out.println("Your lowest score was " + myGrader.getLowest());
+      System.out.println("Your lowest score was " + myGrader.getLowestScore());
   }
 }
