@@ -19,7 +19,7 @@ public class ObjectArray
       // Display the balance of each account
       System.out.println("Here are the balance for each account: ");
 
-      for (int i<0; i<accounts.length; i++)
+      for (int i=0; i<accounts.length; i++)
       {
           System.out.println("Account " +(i+1) + ": $" +
                   accounts[i].getBalance());
