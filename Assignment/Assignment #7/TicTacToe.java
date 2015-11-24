@@ -1,5 +1,13 @@
 import java.io.*;
 
+/**
+In this TicTacToe game, user can
+1. Play with computer
+2. Play with the oterh human player
+3. Java will warn user if he/she is going to lose the game, also give the key square
+4. User can change size of the game, if he/she wants to play 4*4, 5*5, or more
+*/
+
 class TicTacToe
 {
 	public static void main(String[] args)
@@ -13,11 +21,13 @@ class TicTacToe
 						 "\nEnter 2 to play with other people.\nPlease enter 1-2: " );
 
 		final int BOARD_SIZE = 4;			// Tic-Tac-Toe board is BOARD_SIZE*BOARD_SIZE
-		final int DOUBLE_SIZE = BOARD_SIZE * BOARD_SIZE;		// The square of the size, in order to count the total number of cells/squares
+		
+		// The square of the size, in order to count the total number of cells/squares
+		final int DOUBLE_SIZE = BOARD_SIZE * BOARD_SIZE;		
 
 		int players =1;				// The identifier for how many players
 		String input = "";
-		boolean badInput = false;			// Boolean in case user enters the other numbers not 1 or 2
+		boolean badInput = false;	// Boolean in case user enters the other numbers not 1 or 2
 
 		do 							// get the number of players -- only accept 1 or 2
 		{
@@ -50,11 +60,11 @@ class TicTacToe
 
 
 		System.out.println("TicTacToe Game starts."+
-						   " Please enter 1-9 to make your choice.");
+						   " Please enter 1-" + DOUBLE_SIZE + "to make your choice.");
 
-		int [] move = new int [2];		// Turn one move into two dimensions
+		int [] move = new int [2];			// Turn one move into two dimensions
 		char winner;						// The identifier for winner
-		int getTurn = 1;		 						 // The initialization of turns
+		int getTurn = 1;		 			// The initialization of turns
 
 		while(true) 			  // loop only breaks when X or O wins, or a cat's game
 		{
@@ -63,7 +73,7 @@ class TicTacToe
 			{
 				if (players == 2)
 				{
-					System.out.print("Player X, Enter 1-9 to make choice: ");
+					System.out.print("Player X, Enter 1-" + DOUBLE_SIZE + " to make choice: ");
 					while(true)
 					{
 						move = getMove();
@@ -92,11 +102,13 @@ class TicTacToe
 			}
 
 			// Player O's turn
-      char[] canWin=Game.canWin();
-      if(canWin[0]=='X') //If X could win with his next move
-      	System.out.println("Be careful! Player X can win " +
+			char[] canWin=Game.canWin();
+		
+			if(canWin[0]=='X') //If X could win with his next move
+			System.out.println("Be careful! Player X can win " +
 								"if he/she plays in square " +(int)Game.canWin()[1]+ "!");
-        System.out.print("Player O, Enter 1-9 to make choice: ");
+								
+			System.out.print("Player O, Enter 1-" + DOUBLE_SIZE + " to make choice: ");
 
 			while(true)
 			{
@@ -152,29 +164,32 @@ class TicTacToe
 				System.out.println("input error:" + e);
 				System.exit(1);
 			}
-
-			errorInput = false;
-
-				 if(input.equals("1")) {move [0] = 0; move[1] = 0;}
-			else if(input.equals("2")) {move [0] = 0; move[1] = 1;}
-			else if(input.equals("3")) {move [0] = 0; move[1] = 2;}
-			else if(input.equals("4")) {move [0] = 0; move[1] = 3;}
-			else if(input.equals("5")) {move [0] = 1; move[1] = 0;}
-			else if(input.equals("6")) {move [0] = 1; move[1] = 1;}
-			else if(input.equals("7")) {move [0] = 1; move[1] = 2;}
-			else if(input.equals("8")) {move [0] = 1; move[1] = 3;}
-			else if(input.equals("9")) {move [0] = 2; move[1] = 0;}
-			else if(input.equals("10")) {move [0] = 2; move[1] = 1;}
-			else if(input.equals("11")) {move [0] = 2; move[1] = 2;}
-			else if(input.equals("12")) {move [0] = 2; move[1] = 3;}
-			else if(input.equals("13")) {move [0] = 3; move[1] = 0;}
-			else if(input.equals("14")) {move [0] = 3; move[1] = 1;}
-			else if(input.equals("15")) {move [0] = 3; move[1] = 2;}
-			else if(input.equals("16")) {move [0] = 3; move[1] = 3;}
-			else errorInput = true;
-
-			if(errorInput)
+		
+			int userInput = Integer.parseInt(input);		// Convert String into Integer
+			
+			if(userInput <= DOUBLE_SIZE && userInput >= 1)
+			{			
+				int row;
+				int column;
+				
+				// If square is the multiple of BOARD_SIZE, we don't need to use Math.floor
+				if(userInput%BOARD_SIZE == 0)			
+				{
+					row = (userInput/BOARD_SIZE) - 1;			// Calculate in which row
+					column = userInput%BOARD_SIZE - 1;			// Calculate in which column
+				}
+				else
+				{
+					row = (int)Math.floor(userInput/BOARD_SIZE);	// Calculate in which row
+					column = userInput%BOARD_SIZE - 1;			// Calculate in which column
+				}			
+				
+				move[0] = row;
+				move[1] = column;
+			}
+			else
 				System.out.print("Error input. Enter a number within 1-"+ DOUBLE_SIZE + ": ");
+		
 		}
 		while(errorInput);
 
@@ -255,7 +270,7 @@ class Board
 				winner = 'X';
 				break;
 			}
-			else if(accumulation == 1) 							// 1*1*1 = 1, a win for O
+			else if(accumulation == 1) 					   // 1*1*1 = 1, a win for O
 			{
 				winner = 'O';
 				break;
@@ -308,9 +323,9 @@ class Board
 
 	char [] canWin()
 	{
-    char winner = 'N';
-    int catCheck = 1;
-    char [] result=new char[2];
+		char winner = 'N';
+		int catCheck = 1;
+		char [] result=new char[2];
 
 		final int BOARD_SIZE = 4;			// Tic-Tac-Toe board is BOARD_SIZE*BOARD_SIZE
 		final int DOUBLE_SIZE = BOARD_SIZE * BOARD_SIZE;
@@ -318,112 +333,120 @@ class Board
 		for(int i=1; i<(DOUBLE_SIZE+1); i++)
 		{
 			winner = 'N';
-      //Places an X if a cell is not occupied
-      if(!elementMarked(ComputerPlayer.Convert(i)[0],ComputerPlayer.Convert(i)[1]))
-      	markFirst(ComputerPlayer.Convert(i)[0],ComputerPlayer.Convert(i)[1]);
-      else //If cell is occupied, skip this iteration
-        continue;
+			//Places an X if a cell is not occupied
+			if(!elementMarked(ComputerPlayer.Convert(i)[0],ComputerPlayer.Convert(i)[1]))
+				markFirst(ComputerPlayer.Convert(i)[0],ComputerPlayer.Convert(i)[1]);
+			else //If cell is occupied, skip this iteration
+				continue;
 
-      // Check the columns
-      for (int column = 0; column < BOARD_SIZE; column++)
+			// Check the columns
+			for (int column = 0; column < BOARD_SIZE; column++)
 			{
-          int accumulation = myBoard[0][column] *
-														 myBoard[1][column] * myBoard[2][column];
+				int accumulation = myBoard[0][column] *
+							myBoard[1][column] * myBoard[2][column];
 
-          if (accumulation == 8) // 2*2*2 = 8, a win for X
-          {
-              winner = 'X';
-              break;
-          }
-          else if (accumulation == 1) // 1*1*1 = 1, a win for O
-          {
-              winner = 'O';
-              break;
-          }
-    	}
+				if (accumulation == 8) // 2*2*2 = 8, a win for X
+				{
+					winner = 'X';
+					break;
+				}
+				else if (accumulation == 1) // 1*1*1 = 1, a win for O
+				{
+					winner = 'O';
+					break;
+				}
+			}
 
 			if (winner != 'N')
 			{
 				result[0] = winner; //assume the winner
-      	result[1]=(char)i;  //assume this square that will win
+				result[1]=(char)i;  //assume this square that will win
+				
 				//undo all the behavior before
-      	myBoard[ComputerPlayer.Convert(i)[0]][ComputerPlayer.Convert(i)[1]] = 0;
-      	return result;
-    	}
-
-    	// Check the rows
-    	for (int row = 0; row < BOARD_SIZE; row++)
+				myBoard[ComputerPlayer.Convert(i)[0]][ComputerPlayer.Convert(i)[1]] = 0;
+			
+				return result;
+			}
+	
+			// Check the rows
+			for (int row = 0; row < BOARD_SIZE; row++)
 			{
-    		int accumulation = myBoard[row][0] * myBoard[row][1] * myBoard[row][2];
+				int accumulation = myBoard[row][0] * myBoard[row][1] * myBoard[row][2];
 
 				if (accumulation == 8)
 				{
-      		winner = 'X';
-        	break;
-      	}
-      	else if (accumulation == 1)
+					winner = 'X';
+					break;
+				}
+				else if (accumulation == 1)
 				{
-        	winner = 'O';
-        	break;
-      	}
-    	}
-
-    	if (winner != 'N')
+					winner = 'O';
+					break;
+				}
+			}
+	
+			if (winner != 'N')
 			{
-    		result[0] = winner; //assume the winner
-      	result[1]=(char)i;  //assume this square that will win
+				result[0] = winner; //assume the winner
+				result[1]=(char)i;  //assume this square that will win
+			
 				//undo all the behavior before
-      	myBoard[ComputerPlayer.Convert(i)[0]][ComputerPlayer.Convert(i)[1]] = 0;
-      	return result;
-    	}
+				myBoard[ComputerPlayer.Convert(i)[0]][ComputerPlayer.Convert(i)[1]] = 0;
+			
+				return result;
+			}
 
-    	// Check one diagonal
-    	int accumulation = myBoard[0][0] * myBoard[1][1] * myBoard[2][2];
-    	if (accumulation == 1)
-    		winner = 'O';
-    	else if (accumulation == 8)
+			// Check one diagonal
+			int accumulation = myBoard[0][0] * myBoard[1][1] * myBoard[2][2];
+			if (accumulation == 1)
+				winner = 'O';
+			else if (accumulation == 8)
 			{
-      	winner = 'X';
-    		result[0] = winner; //assume the winner
-      	result[1]=(char)i;  //assume this square that will win
+				winner = 'X';
+				result[0] = winner; //assume the winner
+				result[1]=(char)i;  //assume this square that will win
+			
 				//undo all the behavior before
-      	myBoard[ComputerPlayer.Convert(i)[0]][ComputerPlayer.Convert(i)[1]] = 0;
-      	return result;
-    	}
+				myBoard[ComputerPlayer.Convert(i)[0]][ComputerPlayer.Convert(i)[1]] = 0;
+				return result;
+			}
 
-    	// Check the other diagonal
-    	accumulation = myBoard[0][2] * myBoard[1][1] * myBoard[2][0];
-    	if (accumulation == 1)
-    		winner = 'O';
-    	else if (accumulation == 8)
+			// Check the other diagonal
+			accumulation = myBoard[0][2] * myBoard[1][1] * myBoard[2][0];
+			if (accumulation == 1)
+				winner = 'O';
+			else if (accumulation == 8)
 			{
-      	winner = 'X';
-      	result[0] = winner; //assume the winner
-      	result[1]=(char)i;  //assume this square that will win
+				winner = 'X';
+				result[0] = winner; //assume the winner
+				result[1]=(char)i;  //assume this square that will win
+			
 				//undo all the behavior before
-      	myBoard[ComputerPlayer.Convert(i)[0]][ComputerPlayer.Convert(i)[1]] = 0;
-      	return result;
-    	}
+				myBoard[ComputerPlayer.Convert(i)[0]][ComputerPlayer.Convert(i)[1]] = 0;
+      	
+				return result;
+			}
 
-    	// If nobody's won, Check for a cat's game
-    	if (winner == 'N')
+			// If nobody's won, Check for a cat's game
+			if (winner == 'N')
 			{
-    		for (int row = 0; row < 3; row++)
-      		for (int column = 0; column < 3; column++)
-        		catCheck *= myBoard[row][column];
+				for (int row = 0; row < 3; row++)
+				for (int column = 0; column < 3; column++)
+					catCheck *= myBoard[row][column];
 
-      	if (catCheck != 0)
-      		winner = 'C';
-    	}
+				if (catCheck != 0)
+					winner = 'C';
+			}
 
-    	result[0] = winner; //assume the winner
-    	result[1]=(char)i;  //assume this square that will win
+			result[0] = winner; //assume the winner
+			result[1]=(char)i;  //assume this square that will win
+			
 			//undo all the behavior before
-    	myBoard[ComputerPlayer.Convert(i)[0]][ComputerPlayer.Convert(i)[1]] = 0;
+			myBoard[ComputerPlayer.Convert(i)[0]][ComputerPlayer.Convert(i)[1]] = 0;
 		}
-
-    	return result;
-}
+    
+		return result;
+	}
 
 	//toString enables printing out of the board
 	public String toString()
@@ -450,7 +473,8 @@ class Board
 
 				printBoard = printBoard + XorO + " ";
 			}
-			printBoard = printBoard + "\n" ; 	// starts a new line at the end of a row
+			// starts a new line at the end of a row
+			printBoard = printBoard + "\n" ; 	
 		}
 		return printBoard;
 	}
@@ -469,7 +493,7 @@ class ComputerPlayer
 		int square = 5;
 		int move [] = new int [2];
 
-		move = randomMove(board); 								// make a random move
+		move = randomMove(board); 						// make a random move
 		return move;
 	}
 
@@ -492,28 +516,29 @@ class ComputerPlayer
 		return move;
 	}
 
-	//Convert will convert square (1-9) into a row and column
+	//Convert will convert square (1-DOUBLE_SIZE) into a row and column
 	static int [] Convert(int square)
 	{
+		final int BOARD_SIZE = 4;			// Tic-Tac-Toe board is BOARD_SIZE*BOARD_SIZE
 		int move [] = new int [2];
-
-				 if(square == 1) {move [0] = 0; move[1] = 0;}
- 		else if(square == 2) {move [0] = 0; move[1] = 1;}
- 		else if(square == 3) {move [0] = 0; move[1] = 2;}
- 		else if(square == 4) {move [0] = 0; move[1] = 3;}
- 		else if(square == 5) {move [0] = 1; move[1] = 0;}
- 		else if(square == 6) {move [0] = 1; move[1] = 1;}
- 		else if(square == 7) {move [0] = 1; move[1] = 2;}
- 		else if(square == 8) {move [0] = 1; move[1] = 3;}
- 		else if(square == 9) {move [0] = 2; move[1] = 0;}
- 		else if(square == 10) {move [0] = 2; move[1] = 1;}
- 		else if(square == 11) {move [0] = 2; move[1] = 2;}
- 		else if(square == 12) {move [0] = 2; move[1] = 3;}
- 		else if(square == 13) {move [0] = 3; move[1] = 0;}
- 		else if(square == 14) {move [0] = 3; move[1] = 1;}
- 		else if(square == 15) {move [0] = 3; move[1] = 2;}
- 		else if(square == 16) {move [0] = 3; move[1] = 3;}
-
+		int row;
+		int column;
+		
+		// If square is the multiple of BOARD_SIZE, we don't need to use Math.floor
+		if(square%BOARD_SIZE == 0)			
+		{
+			row = (square/BOARD_SIZE) - 1;				// Calculate in which row
+			column = square%BOARD_SIZE - 1;				// Calculate in which column
+		}
+		else
+		{
+			row = (int)Math.floor(square/BOARD_SIZE);		// Calculate in which row
+			column = square%BOARD_SIZE - 1;				// Calculate in which column
+		}
+		
+		move[0] = row;
+		move[1] = column;
+		
 		return move;
 	}
 }
