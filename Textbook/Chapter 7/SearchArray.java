@@ -47,7 +47,7 @@ public class SearchArray
           found = true;
           element = index;
       }
-      index++
+      index++;
     }
 
     return element;
