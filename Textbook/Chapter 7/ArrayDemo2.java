@@ -30,6 +30,5 @@ public class ArrayDemo2
     {
       System.out.println(hours[i]);
     }
-    
   }
 }
