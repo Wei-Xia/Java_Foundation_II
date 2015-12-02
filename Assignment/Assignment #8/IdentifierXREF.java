@@ -1,3 +1,6 @@
+import java.util.*;         // for input & tokenizer
+import java.io.*;           // for output
+
 /**
 How it works?
 1. Procceed line by line
@@ -9,7 +12,7 @@ How it works?
 
 class IdentifierXREF
 {
-  public static void main(String[] args)
+  public static void main(String[] args) throws IOException
   {
     // Produce cross-reference to Java program
     for (/*each line of input*/)
@@ -19,10 +22,16 @@ class IdentifierXREF
         Output it with line blank pre-appended;
         Simplify line;
       */
+      Scanner inputFile = new Scanner(new File(args[0] + ".java"));    // input file
 
-      for (/* each word in line*/)
+      Bufferedwriter outputFile = new Bufferedwriter(new FileWriter(args[0] + ".xref"));    // output file
+
+      for (int lineNumber = 1; inputFile.hasNextLine(); lineNumber++)  //each word in line
       {
           /* add/update word to XREF*/
+          String line = inputFile.nextLine();
+          outputFile.write(lineNumber + "   " + line);      // way one
+          outputFile.newLine();         // way two turn the line
       }
     }
 
