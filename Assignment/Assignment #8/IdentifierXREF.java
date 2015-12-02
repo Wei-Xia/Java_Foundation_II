@@ -30,8 +30,11 @@ class IdentifierXREF
       {
           /* add/update word to XREF*/
           String line = inputFile.nextLine();
+
           outputFile.write(lineNumber + "   " + line);      // way one
           outputFile.newLine();         // way two turn the line
+
+          StringTokenizer words = new StringTokenizer(simplifyLine(line));
       }
     }
 
