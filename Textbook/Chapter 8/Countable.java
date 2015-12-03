@@ -4,5 +4,5 @@
 
 public class Countable
 {
-  private static
+  private static void 
 }
