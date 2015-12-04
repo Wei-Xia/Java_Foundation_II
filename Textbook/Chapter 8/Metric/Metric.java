@@ -4,8 +4,6 @@
 
 public class Metric
 {
-  public static void main(String[] args)
-  {
       /**
         The milesToKillometers method converts a distance in miles to kilometers.
         @param m The distance in miles.
@@ -27,5 +25,4 @@ public class Metric
       {
         return k/1.609;
       }
-  }
 }
