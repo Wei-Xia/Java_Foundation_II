@@ -12,6 +12,7 @@ public class StaticDemo
       Countable object1 = new Countable();
       Countable object2 = new Countable();
       Countable object3 = new Countable();
+      Countable object4 = new Countable();
 
       // Get the number of instances from the class's static field
       objectCount = object1.getInstanceCount();
