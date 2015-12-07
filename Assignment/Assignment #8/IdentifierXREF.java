@@ -18,7 +18,8 @@ class IdentifierXREF
 
     Scanner inputFile = new Scanner(new File(args[0] + ".java"));    // input file
 
-    Bufferedwriter outputFile = new Bufferedwriter(new FileWriter(args[0] + ".xref"));    // output file
+    Bufferedwriter outputFile = new Bufferedwriter(new FileWriter(args[args.length -1] + ".xref"));    // output file
+    Bufferedwriter outputFile = new Bufferedwriter(new FileWriter(args.length == 1 ? args[0] : args[1] + ".xref"));    // output file
 
     for (int lineNumber = 1; inputFile.hasNextLine(); lineNumber++ /*each line of input*/)
     {
@@ -32,8 +33,6 @@ class IdentifierXREF
 
       outputFile.write(lineNumber + "   " + line);      // way one
       outputFile.newLine();         // way two: turn the line
-
-      StringTokenizer words = new StringTokenizer(simplifyLine(line));
 
       StringTokenizer words = new StringTokenizer(simplifyLine(line));
 
@@ -54,6 +53,32 @@ class IdentifierXREF
 
     // Output XREF;
     Xref.output();
-    
+
   }     // End of main
+
+  Static String simplifyLine(String line)
+  {
+    /* replace commnets, literal strings, characterr constant, numeric constants,
+       operator, punctuation, etc.
+       those characters are not part of identifer in line replacing by blanks*/
+    line = deleteComments(line);
+    line = deleteLiteralString(line);
+    line = deleteCharacterConstant(line);
+    line = deleteNumericConstant(line);
+    line = deleteOperatorPunctuation(line);
+
+    return line;
+  }
+
+  Static String deleteComments(String line)
+  {
+    /* replace /* style comments by a single blank, and remove // style comments */
+    while (/*line contatins '/*' */)
+    {
+        // Find position of first /*
+        // Find position of second */
+        // Replace substring from /* to */ by a blank
+    }
+  }
+
 }       //End of class
