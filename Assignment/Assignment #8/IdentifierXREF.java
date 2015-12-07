@@ -31,18 +31,29 @@ class IdentifierXREF
       String line = inputFile.nextLine();
 
       outputFile.write(lineNumber + "   " + line);      // way one
-      outputFile.newLine();         // way two turn the line
+      outputFile.newLine();         // way two: turn the line
 
       StringTokenizer words = new StringTokenizer(simplifyLine(line));
-      
-      for ()  //each word in line
+
+      StringTokenizer words = new StringTokenizer(simplifyLine(line));
+
+      while (words.hasMoreTokens())
+      {
+        Xref.add(words.nextToken(), lineNumber);
+      }
+
+      for (/*each word in line*/)  //each word in line
       {
           /* add/update word to XREF*/
-
+            Xref.add(word, lineNumber);
       }
     }
 
     // Alphabetize XREF;
+    Xref.alphabetize();
+
     // Output XREF;
+    Xref.output();
+    
   }     // End of main
 }       //End of class
