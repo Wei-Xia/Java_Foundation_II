@@ -10,7 +10,7 @@ How it works?
 5. When all lines have been Procceed, then alphabetize XREF output to a file
 */
 
-class IdentifierXREF
+class Xref
 {
   public static void main(String[] args) throws IOException
   {
