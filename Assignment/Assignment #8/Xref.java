@@ -38,13 +38,13 @@ class Xref
 
       while (words.hasMoreTokens())
       {
-        Xref.add(words.nextToken(), lineNumber);
+          Xref.add(words.nextToken(), lineNumber);
       }
 
       for (/*each word in line*/)  //each word in line
       {
           /* add/update word to XREF*/
-            Xref.add(word, lineNumber);
+          Xref.add(word, lineNumber);
       }
     }
 
@@ -177,10 +177,14 @@ class Xref
     for (i=0; !word.equals(javaReservedWord[i]); i++);
 
     // matches a reserved word, so don't add to database
-    if ( i<javaReservedWord.length -1)  return;
+    if ( i < javaReservedWord.length -1)  return;
 
     /* doesn't match a reserved word, so proceed by searching to see if
           word is already in database */
+
+
+
+      return word, lineNumber;
   }
 
 }       //End of class
