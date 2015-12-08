@@ -19,7 +19,7 @@ class Xref
     Scanner inputFile = new Scanner(new File(args[0] + ".java"));    // input file
 
     Bufferedwriter outputFile = new Bufferedwriter(new FileWriter(args[args.length -1] + ".xref"));    // output file
-    Bufferedwriter outputFile = new Bufferedwriter(new FileWriter(args.length == 1 ? args[0] : args[1] + ".xref"));    // output file
+    // Bufferedwriter outputFile = new Bufferedwriter(new FileWriter(args.length == 1 ? args[0] : args[1] + ".xref"));    // output file
 
     for (int lineNumber = 1; inputFile.hasNextLine(); lineNumber++ /*each line of input*/)
     {
@@ -32,7 +32,7 @@ class Xref
       String line = inputFile.nextLine();
 
       outputFile.write(lineNumber + "   " + line);      // way one
-      outputFile.newLine();         // way two: turn the line
+      // outputFile.newLine();         // way two: turn the line
 
       StringTokenizer words = new StringTokenizer(simplifyLine(line));
 
@@ -177,14 +177,13 @@ class Xref
     for (i=0; !word.equals(javaReservedWord[i]); i++);
 
     // matches a reserved word, so don't add to database
-    if ( i < javaReservedWord.length -1)  return;
+    if ( i < javaReservedWord.length-1)  return;
 
     /* doesn't match a reserved word, so proceed by searching to see if
           word is already in database */
 
 
 
-      return word, lineNumber;
   }
 
 }       //End of class
