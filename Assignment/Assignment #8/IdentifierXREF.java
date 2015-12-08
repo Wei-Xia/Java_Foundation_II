@@ -51,7 +51,7 @@ class IdentifierXREF
     // Alphabetize XREF;
     Xref.alphabetize();
 
-    // Output XREF;
+    // Output XREF; Pass an argument to output file
     Xref.output();
 
   }     // End of main
@@ -132,6 +132,9 @@ class IdentifierXREF
     for (int i = 0; i<line.length(); i++)
     {
       char C = line.charAt(i);    // current input character;
+
+      if (!character.isLetterOrDigit(c) && c != '_' && c != '$')
+        c = ' ';
 
       switch(state)
       {
