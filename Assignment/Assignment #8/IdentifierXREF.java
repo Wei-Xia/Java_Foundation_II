@@ -73,12 +73,50 @@ class IdentifierXREF
   Static String deleteComments(String line)
   {
     /* replace /* style comments by a single blank, and remove // style comments */
-    while (/*line contatins '/*' */)
+    while ((int i = line.indexOf("\*"))>-1)  //line contatins '/*'
     {
         // Find position of first /*
         // Find position of second */
         // Replace substring from /* to */ by a blank
+        line = line.substring(0,1) + " " + line.substring(line.indexOf("\*")+2);
+
+        return line;
     }
+
+    /*eliminate // comments if it appears in line*/
+    if ((int i = line.indexOf("//"))>-1)
+      line = line.substring(0,i);
+
+    return  line;
+  }
+
+  Static String deleteLiteralString(String line)
+  {
+    while ((int i = line.indexOf("\"")) > -1)
+    {
+      // Everything in line up to first "
+      String start = line.substring(0,1);
+
+      // Everything in line after first "
+      String end = line.substring(i+1);
+
+      line = start + " " + end.substring(end.indexOf("\"")+1);
+    }
+
+    return line;
+  }
+
+  Static String deleteCharacterConstant(String line)
+  {
+    while ((int i = indexOf("'")) > -1)
+    {
+      String start = line.substring(0,i);
+      String end = line.substring(i+3);
+
+      line = start + " " + end;
+    }
+
+    return line;
   }
 
 }       //End of class
