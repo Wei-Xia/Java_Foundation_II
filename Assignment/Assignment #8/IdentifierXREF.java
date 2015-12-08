@@ -119,4 +119,37 @@ class IdentifierXREF
     return line;
   }
 
+  Static String deleteNumericConstant(String line)
+  {
+    // Replace each numeric constant by a single blank
+    final int NOTIDENTIFIER = 0;
+    final int IDENTIFIER = NOTIDENTIFIER + 1;
+
+    // Empty String, build output character by character 1 at a line
+    String output = "";
+
+    int state = NOTIDENTIFIER;
+    for (int i = 0; i<line.length(); i++)
+    {
+      char C = line.charAt(i);    // current input character;
+
+      switch(state)
+      {
+        case NOTIDENTIFIER:
+          output += character.isDigit(c) ? " " : character.toString(c);
+          if (character.isLetter(c) || c == '_' || c == '$')
+            state = IDENTIFIER;
+          break;
+
+        case IDENTIFIER:
+          output += character.toString(c);
+          if (c == '')
+            state = NOTIDENTIFIER;
+          break;
+      }
+    }
+
+    return output;
+  }
+
 }       //End of class
