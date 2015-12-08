@@ -16,11 +16,11 @@ public class StockCompare
       else
         System.out.println("The objects are different.");
 
-      // // Use the == operator to compare the objects
-      // // (This is a mistake!!!!)
-      // if (company1 == company2)
-      //   System.out.println("Both objects are the same.");
-      // else
-      //   System.out.println("The objects are different.");
+      // Use the == operator to compare the objects
+      // (This is a mistake!!!!)
+      if (company1 == company2)
+        System.out.println("Both objects are the same.");
+      else
+        System.out.println("The objects are different.");
   }
 }
