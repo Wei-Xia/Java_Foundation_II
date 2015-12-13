@@ -40,12 +40,6 @@ class IdentifierXref
       {
           Xref.add(words.nextToken(), lineNumber);
       }
-
-      for (/*each word in line*/)  //each word in line
-      {
-          /* add/update word to XREF*/
-          Xref.add(word, lineNumber);
-      }
     }
 
     // Alphabetize XREF;
