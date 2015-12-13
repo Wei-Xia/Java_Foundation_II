@@ -5,6 +5,7 @@ class Xref
       /* replace commnets, literal strings, characterr constant, numeric constants,
           operator, punctuation, etc.
           those characters are not part of identifer in line replacing by blanks*/
+
        line = deleteComments(line);
        line = deleteLiteralString(line);
        line = deleteCharacterConstant(line);
@@ -125,7 +126,6 @@ class Xref
 
        /* doesn't match a reserved word, so proceed by searching to see if
           word is already in database */
-
 
      }
 }
