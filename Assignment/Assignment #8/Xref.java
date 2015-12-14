@@ -1,5 +1,15 @@
 class Xref
 {
+    /* Store and manage identifer data */
+    // maximum number of idenfiers
+    final int MAX_IDENTIFERS = 1000;
+
+    // Storage space for idenfier data
+    String[] identiferInformation = new String[MAX_IDENTIFERS];
+
+    // Current number of entries in database
+    int numberOfStoredWords;
+
     Static String simplifyLine(String line)
     {
       /* replace commnets, literal strings, characterr constant, numeric constants,
@@ -122,10 +132,18 @@ class Xref
        for (i=0; !word.equals(javaReservedWord[i]); i++);
 
        // matches a reserved word, so don't add to database
-       if ( i < javaReservedWord.length-1)  return;
+       if ( i < javaReservedWord.length-1 )  return;
 
        /* doesn't match a reserved word, so proceed by searching to see if
           word is already in database */
 
+       // Create an ArrayList to hold some names.
+       ArrayList<String> database = new ArrayList<String>();
+
+       for (int i = 0 ; i < database.size; i++ )
+       {
+          if (word != database.get(i))
+            database.add(i, word)
+       }
      }
 }
