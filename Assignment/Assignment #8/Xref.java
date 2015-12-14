@@ -1,106 +1,16 @@
+import java.io.*;
+
 class Xref
 {
-    Static String simplifyLine(String line)
-    {
-      /* replace commnets, literal strings, characterr constant,
-          numeric constants, operator, punctuation, etc.
-      those characters are not part of identifer in line replacing by blanks*/
+     /* Store and manage identifer data */
+     // maximum number of idenfiers
+     final int MAX_IDENTIFERS = 1000;
 
-       line = deleteComments(line);
-       line = deleteLiteralString(line);
-       line = deleteCharacterConstant(line);
-       line = deleteNumericConstant(line);
-       line = deleteOperatorPunctuation(line);
+     // Storage space for idenfier data
+     String[] identiferInformation = new String[MAX_IDENTIFERS];
 
-       return line;
-     }
-
-     Static String deleteComments(String line)
-     {
-       /* replace /* style comments by a single blank,
-          and remove // style comments */
-
-       while ((int i = line.indexOf("\*"))>-1)  //line contatins '/*'
-       {
-         // Find position of first /*
-         // Find position of second */
-         // Replace substring from /* to */ by a blank
-         line = line.substring(0,1) + " " + line.substring(line.indexOf("\*")+2);
-
-         return line;
-       }
-
-       /*eliminate // comments if it appears in line*/
-       if ((int i = line.indexOf("//"))>-1)
-       line = line.substring(0,i);
-
-       return  line;
-     }
-
-     Static String deleteLiteralString(String line)
-     {
-       while ((int i = line.indexOf("\"")) > -1)
-       {
-         // Everything in line up to first "
-         String start = line.substring(0,1);
-
-         // Everything in line after first "
-         String end = line.substring(i+1);
-
-         line = start + " " + end.substring(end.indexOf("\"")+1);
-       }
-
-       return line;
-     }
-
-     Static String deleteCharacterConstant(String line)
-     {
-       while ((int i = indexOf("'")) > -1)
-       {
-         String start = line.substring(0,i);
-         String end = line.substring(i+3);
-
-         line = start + " " + end;
-       }
-
-       return line;
-     }
-
-     Static String deleteNumericConstant(String line)
-     {
-       // Replace each numeric constant by a single blank
-       final int NOTIDENTIFIER = 0;
-       final int IDENTIFIER = NOTIDENTIFIER + 1;
-
-       // Empty String, build output character by character 1 at a line
-       String output = "";
-
-       int state = NOTIDENTIFIER;
-       for (int i = 0; i<line.length(); i++)
-       {
-         char C = line.charAt(i);    // current input character;
-
-         if (!character.isLetterOrDigit(c) && c != '_' && c != '$')
-         c = ' ';
-
-         switch(state)
-         {
-           case NOTIDENTIFIER:
-           output += character.isDigit(c) ? " " : character.toString(c);
-           if (character.isLetter(c) || c == '_' || c == '$')
-              state = IDENTIFIER;
-           break;
-
-           case IDENTIFIER:
-           output += character.toString(c);
-           if (c == '')
-              state = NOTIDENTIFIER;
-           break;
-         }
-       }
-
-       return output;
-     }
+     // Current number of entries in database
+     int numberOfStoredWords;
 
      void add(String word, int lineNumber)
      {
@@ -129,19 +39,17 @@ class Xref
        /* doesn't match a reserved word, so proceed by searching to see if
           word is already in database */
 
-       // Create an ArrayList to hold some names.
-       ArrayList<String> database = new ArrayList<String>();
-
-       for (int i = 0 ; i < database.size; i++ )
+       else
        {
-          if (word != database.get(i))
-            database.add(i, word)
+         for (int i = 0 ; i < identiferInformation.size; i++ )
+            if (word != database.get(i))
+              identiferInformation.add(i, word);
        }
      }
 
-     Static String alphabetize(String line)
+     Static void alphabetize(String line)
      {
-       for (int i = 0; i < n; i++)
+       for (int i = 0; i < numberOfStoredWords; i++)
        {
           for (int j = i + 1; j < n; j++)
           {
@@ -152,8 +60,14 @@ class Xref
               line[j] = temp;
             }
           }
-        }
+       }
+     }
 
-        return line;
+     Static void output(BufferedWriter outputFile)
+     {
+       for (int i = 0; i < numberOfStoredWords.length; i++ )
+       {
+         outputFile.write(javaReservedWord[i]);
+       }
      }
 }
