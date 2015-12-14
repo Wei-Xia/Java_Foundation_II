@@ -21,6 +21,16 @@ class IdentifierXref
     BufferedWriter outputFile = new (new FileWriter(args[args.length -1] + ".xref"));    // output file
     // BufferedWriter outputFile = new BufferedWriter(new FileWriter(args.length == 1 ? args[0] : args[1] + ".xref"));    // output file
 
+    /* Store and manage identifer data */
+    // maximum number of idenfiers
+    final int MAX_IDENTIFERS = 1000;
+
+    // Storage space for idenfier data
+    String[] identiferInformation = new String[MAX_IDENTIFERS];
+
+    // Current number of entries in database
+    int numberOfStoredWords;
+
     for (int lineNumber = 1; inputFile.hasNextLine(); lineNumber++ /*each line of input*/)
     {
       /*

@@ -1,20 +1,10 @@
 class Xref
 {
-    /* Store and manage identifer data */
-    // maximum number of idenfiers
-    final int MAX_IDENTIFERS = 1000;
-
-    // Storage space for idenfier data
-    String[] identiferInformation = new String[MAX_IDENTIFERS];
-
-    // Current number of entries in database
-    int numberOfStoredWords;
-
     Static String simplifyLine(String line)
     {
-      /* replace commnets, literal strings, characterr constant, numeric constants,
-          operator, punctuation, etc.
-          those characters are not part of identifer in line replacing by blanks*/
+      /* replace commnets, literal strings, characterr constant,
+          numeric constants, operator, punctuation, etc.
+      those characters are not part of identifer in line replacing by blanks*/
 
        line = deleteComments(line);
        line = deleteLiteralString(line);
@@ -27,7 +17,9 @@ class Xref
 
      Static String deleteComments(String line)
      {
-       /* replace /* style comments by a single blank, and remove // style comments */
+       /* replace /* style comments by a single blank,
+          and remove // style comments */
+
        while ((int i = line.indexOf("\*"))>-1)  //line contatins '/*'
        {
          // Find position of first /*
@@ -145,5 +137,23 @@ class Xref
           if (word != database.get(i))
             database.add(i, word)
        }
+     }
+
+     Static String alphabetize(String line)
+     {
+       for (int i = 0; i < n; i++)
+       {
+          for (int j = i + 1; j < n; j++)
+          {
+            if (line[i].compareTo(line[j])>0)
+            {
+              temp = line[i];
+              line[i] = line[j];
+              line[j] = temp;
+            }
+          }
+        }
+
+        return line;
      }
 }
