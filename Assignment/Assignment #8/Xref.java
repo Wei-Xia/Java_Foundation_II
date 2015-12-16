@@ -63,10 +63,13 @@ class Xref
        }
      }
 
-     Static void output(BufferedWriter outputFile)
+     Static void output(BufferedWriter outputFile) throws IOException
      {
-       for (int i = 0; i < numberOfStoredWords.length; i++ )
+       outputFile.newLine();     // for readability
+
+       for (int i = 0; i < numberOfStoredWords; i++ )
        {
+         outputFile.newLine();
          outputFile.write(javaReservedWord[i]);
        }
      }
