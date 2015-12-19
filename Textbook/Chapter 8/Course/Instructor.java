@@ -2,7 +2,7 @@
   This class stores data about an instructor.
 */
 
-public class instructor
+public class Instructor
 {
   private String lastName;      // Last name
   private String firstName;     // First name
