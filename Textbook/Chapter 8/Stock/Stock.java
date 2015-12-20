@@ -20,6 +20,17 @@ public class Stock
   }
 
   /**
+   Copy constructor
+   @param object2 The Stock object to copy.
+  */
+
+  public Stock(Stock object2)
+  {
+     symbol = object2.symbol;
+     sharePrice = object2.sharePrice;
+  }
+
+  /**
     getSymbol method
     @return The stock's trading symbol
   */
@@ -76,7 +87,7 @@ public class Stock
       // Create a new Stock object and initialize it
       // with the same data held by the calling object.
       Stock copyObject = new Stock(symbol, sharePrice);
-      
+
       // Return a reference to the new object.
       return copyObject;
    }
