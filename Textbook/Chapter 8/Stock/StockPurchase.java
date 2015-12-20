@@ -48,6 +48,6 @@ public class StockPurchase
 
   public double getCost()
   {
-    return shares*getSharePrice();
+    return shares * stock.getSharePrice();
   }
 }
