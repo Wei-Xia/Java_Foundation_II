@@ -28,7 +28,7 @@ public class StockTrader
       StockPurchase buy = new StockPurchase(xyzCompany, sharesToBuy);
 
       // Display the cost of the transaction
-      System.out.printf("Cost of the stock: $%,.2f", buy.getCost());
+      System.out.printf("Cost of the stock: $%,.2f\n", buy.getCost());
 
   }
 }
