@@ -73,5 +73,4 @@ public class Course
     // Return the string
     return str;
   }
-  
 }
