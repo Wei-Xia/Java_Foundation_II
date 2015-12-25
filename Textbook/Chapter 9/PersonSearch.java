@@ -27,7 +27,7 @@ public class PersonSearch
       System.out.println("Here are the names that match: ");
       for (String person : people)
       {
-          if (person.starsWith(lookUp))
+          if (person.startsWith(lookUp))
             System.out.println(person);
       }
   }
