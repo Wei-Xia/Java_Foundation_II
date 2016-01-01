@@ -32,6 +32,5 @@ public class Indexof
         System.out.println(position2);
         position2 = str.lastIndexOf('r', position2 - 1);
       }
-      
   }
 }
