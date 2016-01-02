@@ -12,6 +12,7 @@ public class Indexof
       System.out.println("The letter r last appears at position " + last);
 
       int position1;
+      
 
       System.out.println("\nThe letter r appears at the following locations: ");
       position1 = str.indexOf('r');
