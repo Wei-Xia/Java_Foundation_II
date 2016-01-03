@@ -30,6 +30,5 @@ public class PersonSearch
           if (person.startsWith(lookUp))
             System.out.println(person);
       }
-      
   }
 }
