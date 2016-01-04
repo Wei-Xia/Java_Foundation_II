@@ -26,7 +26,7 @@ public class StringAnalyzer
       for (int i = 0; i < array.length; i++)
       {
           if (Character.isLetter(array[i]))
-            letter++;
+            letters++;
           else if (Character.isDigit(array[i]))
             digits++;
           else if (Character.isWhitespace(array[i]))
