@@ -3,7 +3,7 @@ public class SplitDemo3
   public static void main(String[] args)
   {
       // Create a string with leading and trailing whitespaces.
-      String str = " one;two;three   ";
+      String str = " one;two;three    ";
 
       // Trim leading and trailing whitespaces
       str = str.trim();
