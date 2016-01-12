@@ -13,8 +13,9 @@ public class SuperClass2
     Constructor #2
   */
 
-  public SuperClass2()
+  public SuperClass2(int arg)
   {
-
+    System.out.println("The following argument was passed to the superclass "
+                + "constructor: " + arg);
   }
 }
